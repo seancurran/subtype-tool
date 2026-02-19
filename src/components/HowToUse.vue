@@ -9,12 +9,12 @@ import ContentBox from '@/components/ContentBox.vue'
             <h2 class="text-4xl font-bold text-[#05319B] mb-4">Welcome.</h2>
 
             <p class="text-gray-600 mb-6">
-                The Dry Eye Relief & Management Tool generates applicable management techniques
-                based on mitigation and measurement.
+                The Dry Eye Management Map generates applicable management techniques based on
+                mitigation and measurement.
             </p>
 
             <h3 class="text-xl font-bold text-[#05319B] mb-4">
-                HOW TO USE THE DRY EYE RELIEF & MANAGEMENT TOOL
+                HOW TO USE THE DRY EYE MANAGEMENT MAP
             </h3>
 
             <p class="text-gray-600 mb-4">
