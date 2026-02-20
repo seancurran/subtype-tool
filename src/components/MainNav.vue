@@ -7,6 +7,8 @@ import { useClinicalDataStore } from '@/stores/clinicalData'
 const navigationStore = useNavigationStore()
 const clinicalDataStore = useClinicalDataStore()
 
+const currentYear = new Date().getFullYear()
+
 // Compute variants for main category buttons based on checked state
 const tearFilmVariant = computed(() => (clinicalDataStore.hasTearFilmChecked ? 'blue' : 'gray'))
 const eyelidVariant = computed(() => (clinicalDataStore.hasEyelidChecked ? 'blue' : 'gray'))
@@ -147,6 +149,8 @@ const handleNavClick = (menuId) => {
         </div>
 
         <!-- Copyright -->
-        <div class="text-xs text-gray-500 mt-16">© 2025 Alcon Inc. GLB/IMG-SYC-2500004</div>
+        <div class="text-xs text-gray-500 mt-16">
+            © {{ currentYear }} Alcon Inc. GLBDEOH2600001
+        </div>
     </div>
 </template>
