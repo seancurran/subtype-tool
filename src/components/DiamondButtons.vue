@@ -1,11 +1,13 @@
 <script setup>
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import DiamondButton from '@/components/DiamondButton.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import tearDiamond from '@/assets/images/tear-diamond.png'
 import eyelidDiamond from '@/assets/images/eyelid-diamond.png'
 import ocularDiamond from '@/assets/images/ocular-diamond.png'
 
+const { t } = useI18n()
 const navigationStore = useNavigationStore()
 
 // Define parent-child relationships
@@ -32,6 +34,17 @@ const isOcularSurfaceActive = computed(() => {
     return navigationStore.selectedDiamond === null || navigationStore.selectedDiamond === 'ocular'
 })
 
+// Diamond labels as computed HTML strings
+const tearLabel = computed(
+    () => `${t('diamonds.tearFilmLine1')}<br />${t('diamonds.tearFilmLine2')}`,
+)
+const eyelidLabel = computed(
+    () => `${t('diamonds.eyelidLine1')}<br />${t('diamonds.eyelidLine2')}`,
+)
+const ocularLabel = computed(
+    () => `${t('diamonds.ocularLine1')}<br />${t('diamonds.ocularLine2')}`,
+)
+
 const handleDiamondClick = (menuId) => {
     // Map menuId to diamond type
     let diamondType = null
@@ -57,20 +70,20 @@ const handleDiamondClick = (menuId) => {
     <div class="flex flex-col items-center">
         <!-- Text Block - Above diamonds on small screens, left side on large screens -->
         <div class="text-gray-500 leading-tight text-center mb-4 max-[1140px]:block hidden">
-            <span class="font-bold">DRY EYE RELIEF</span><br />& MANAGEMENT
+            <span class="font-bold">{{ t('diamonds.dryEyeReliefLine1') }}</span><br />{{ t('diamonds.dryEyeReliefLine2') }}
         </div>
 
         <div class="w-[400px] h-[400px] min-w-[400px] relative max-[1140px]:ml-[-100px]">
             <div class="top-1/2 relative flex min-w-[380px] items-center justify-center">
                 <!-- Text Block - Left side on large screens only -->
                 <div class="absolute left-[20px] text-gray-500 leading-tight max-[1140px]:hidden">
-                    <span class="font-bold">DRY EYE RELIEF</span><br />& MANAGEMENT
+                    <span class="font-bold">{{ t('diamonds.dryEyeReliefLine1') }}</span><br />{{ t('diamonds.dryEyeReliefLine2') }}
                 </div>
 
                 <!-- Tear Film Deficiencies -->
                 <DiamondButton
                     :image="tearDiamond"
-                    label="TEAR FILM<br />DEFICIENCIES"
+                    :label="tearLabel"
                     position="top"
                     menu-id="tear-film-deficiencies"
                     data-diamond="tear"
@@ -81,7 +94,7 @@ const handleDiamondClick = (menuId) => {
                 <!-- Eyelid Anomalies -->
                 <DiamondButton
                     :image="eyelidDiamond"
-                    label="EYELID<br />ANOMALIES"
+                    :label="eyelidLabel"
                     position="right"
                     menu-id="eyelid-anomalies"
                     data-diamond="eyelid"
@@ -92,7 +105,7 @@ const handleDiamondClick = (menuId) => {
                 <!-- Ocular Surface Abnormalities -->
                 <DiamondButton
                     :image="ocularDiamond"
-                    label="OCULAR SURFACE<br />ABNORMALITIES"
+                    :label="ocularLabel"
                     position="bottom"
                     menu-id="ocular-surface-abnormalities"
                     data-diamond="ocular"

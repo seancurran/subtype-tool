@@ -1,9 +1,11 @@
 <script setup>
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import GradientButton from '@/components/GradientButton.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { useClinicalDataStore } from '@/stores/clinicalData'
 
+const { t } = useI18n()
 const navigationStore = useNavigationStore()
 const clinicalDataStore = useClinicalDataStore()
 
@@ -53,28 +55,28 @@ const handleNavClick = (menuId) => {
                 :active="navigationStore.activeMenuItem === 'tear-film-deficiencies'"
                 @click="handleNavClick('tear-film-deficiencies')"
             >
-                TEAR FILM DEFICIENCIES
+                {{ t('nav.tearFilmDeficiencies') }}
             </GradientButton>
             <GradientButton
                 variant="cyan"
                 :active="navigationStore.activeMenuItem === 'lipid'"
                 @click="handleNavClick('lipid')"
             >
-                Lipid
+                {{ t('nav.lipid') }}
             </GradientButton>
             <GradientButton
                 variant="cyan"
                 :active="navigationStore.activeMenuItem === 'aqueous'"
                 @click="handleNavClick('aqueous')"
             >
-                Aqueous
+                {{ t('nav.aqueous') }}
             </GradientButton>
             <GradientButton
                 variant="cyan"
                 :active="navigationStore.activeMenuItem === 'mucin-glycocalyx'"
                 @click="handleNavClick('mucin-glycocalyx')"
             >
-                Mucin / glycocalyx
+                {{ t('nav.mucinGlycocalyx') }}
             </GradientButton>
         </div>
 
@@ -85,21 +87,21 @@ const handleNavClick = (menuId) => {
                 :active="navigationStore.activeMenuItem === 'eyelid-anomalies'"
                 @click="handleNavClick('eyelid-anomalies')"
             >
-                EYELID ANOMALIES
+                {{ t('nav.eyelidAnomalies') }}
             </GradientButton>
             <GradientButton
                 variant="teal"
                 :active="navigationStore.activeMenuItem === 'blink-lid-closure'"
                 @click="handleNavClick('blink-lid-closure')"
             >
-                Blink / lid closure
+                {{ t('nav.blinkLidClosure') }}
             </GradientButton>
             <GradientButton
                 variant="teal"
                 :active="navigationStore.activeMenuItem === 'lid-margin'"
                 @click="handleNavClick('lid-margin')"
             >
-                Lid margin
+                {{ t('nav.lidMargin') }}
             </GradientButton>
         </div>
 
@@ -110,21 +112,21 @@ const handleNavClick = (menuId) => {
                 :active="navigationStore.activeMenuItem === 'ocular-surface-abnormalities'"
                 @click="handleNavClick('ocular-surface-abnormalities')"
             >
-                OCULAR SURFACE ABNORMALITIES
+                {{ t('nav.ocularSurfaceAbnormalities') }}
             </GradientButton>
             <GradientButton
                 variant="purple"
                 :active="navigationStore.activeMenuItem === 'anatomical-misalignment'"
                 @click="handleNavClick('anatomical-misalignment')"
             >
-                Anatomical misalignment
+                {{ t('nav.anatomicalMisalignment') }}
             </GradientButton>
             <GradientButton
                 variant="purple"
                 :active="navigationStore.activeMenuItem === 'neural-dysfunction'"
                 @click="handleNavClick('neural-dysfunction')"
             >
-                Neural dysfunction
+                {{ t('nav.neuralDysfunction') }}
             </GradientButton>
             <GradientButton
                 variant="purple"
@@ -132,8 +134,8 @@ const handleNavClick = (menuId) => {
                 @click="handleNavClick('ocular-surface-cellular')"
             >
                 <div class="text-center leading-3">
-                    <div>Ocular surface cellular</div>
-                    <div>damage / disruption</div>
+                    <div>{{ t('nav.ocularSurfaceCellularLine1') }}</div>
+                    <div>{{ t('nav.ocularSurfaceCellularLine2') }}</div>
                 </div>
             </GradientButton>
             <GradientButton
@@ -142,15 +144,15 @@ const handleNavClick = (menuId) => {
                 @click="handleNavClick('primary-inflammation')"
             >
                 <div class="text-center leading-3">
-                    <div>Primary inflammation /</div>
-                    <div>oxidative stress</div>
+                    <div>{{ t('nav.primaryInflammationLine1') }}</div>
+                    <div>{{ t('nav.primaryInflammationLine2') }}</div>
                 </div>
             </GradientButton>
         </div>
 
         <!-- Copyright -->
         <div class="text-xs text-gray-500 mt-16">
-            © {{ currentYear }} Alcon Inc. GLBDEOH2600001
+            {{ t('nav.copyright', { year: currentYear }) }}
         </div>
     </div>
 </template>

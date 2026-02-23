@@ -1,18 +1,18 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 import { useNavigationStore } from './navigation'
+import { i18n } from '@/i18n'
 
 export const useLayoutStore = defineStore('layout', () => {
     const navigationStore = useNavigationStore()
 
     // Layout state
     const svgPaths = ref([])
-    // Static margins - calculated once on initial mount
+    // Static margins - calculated once on initial mount (reset on locale change)
     const boxesMarginTop = ref(0)
     const diamondsMarginTop = ref(0)
     const marginsCalculated = ref(false)
     // Static offset to accommodate the tallest content panel (Lipid)
-    // This prevents the layout from jumping when switching between options
     const contentTopOffset = ref(60)
     const containerRef = ref(null)
 
@@ -46,9 +46,12 @@ export const useLayoutStore = defineStore('layout', () => {
         return false
     }
 
-    // Calculate SVG connector paths
+    // Calculate SVG connector paths (RTL-aware)
     function calculatePaths() {
         if (!containerRef.value) return
+
+        const isRTL = i18n.global.locale.value !== 'en' &&
+            document.documentElement.dir === 'rtl'
 
         // Get the main content area that contains the SVG
         const mainContent = containerRef.value.parentElement.parentElement
@@ -83,43 +86,97 @@ export const useLayoutStore = defineStore('layout', () => {
         const eyelidBoxRect = eyelidBox.getBoundingClientRect()
         const ocularBoxRect = ocularBox.getBoundingClientRect()
 
-        // Calculate positions relative to the SVG container
-        const paths = [
-            {
-                id: 'tear',
-                color: colors.blue,
-                startX: tearDiamondRect.left + tearDiamondRect.width * 0.75 - svgContainer.left,
-                startY: tearDiamondRect.top + tearDiamondRect.height * 0.24 - svgContainer.top,
-                endX: tearBoxRect.left - svgContainer.left,
-                endY: tearBoxRect.top + tearBoxRect.height / 2 - svgContainer.top,
-                isStraight: true,
-            },
-            {
-                id: 'eyelid',
-                color: colors.teal,
-                startX: eyelidDiamondRect.right - 10 - svgContainer.left,
-                startY: eyelidDiamondRect.top + eyelidDiamondRect.height * 0.47 - svgContainer.top,
-                endX: eyelidBoxRect.left - svgContainer.left,
-                endY: eyelidBoxRect.top + eyelidBoxRect.height / 2 - svgContainer.top,
-                isStraight: true,
-            },
-            {
-                id: 'ocular',
-                color: colors.purple,
-                startX: ocularDiamondRect.left + ocularDiamondRect.width * 0.74 - svgContainer.left,
-                startY: ocularDiamondRect.top + ocularDiamondRect.height * 0.72 - svgContainer.top,
-                endX: ocularBoxRect.left - svgContainer.left,
-                endY: ocularBoxRect.top + ocularBoxRect.height / 2 - svgContainer.top,
-                isStraight: true,
-            },
-        ]
+        let paths
+        if (isRTL) {
+            // In RTL: diamonds are on the right, boxes are on the left
+            // Connection points flip horizontally
+            paths = [
+                {
+                    id: 'tear',
+                    color: colors.blue,
+                    startX: tearDiamondRect.left + tearDiamondRect.width * 0.25 - svgContainer.left,
+                    startY: tearDiamondRect.top + tearDiamondRect.height * 0.24 - svgContainer.top,
+                    endX: tearBoxRect.right - svgContainer.left,
+                    endY: tearBoxRect.top + tearBoxRect.height / 2 - svgContainer.top,
+                    isStraight: true,
+                },
+                {
+                    id: 'eyelid',
+                    color: colors.teal,
+                    startX: eyelidDiamondRect.left + 10 - svgContainer.left,
+                    startY:
+                        eyelidDiamondRect.top +
+                        eyelidDiamondRect.height * 0.47 -
+                        svgContainer.top,
+                    endX: eyelidBoxRect.right - svgContainer.left,
+                    endY: eyelidBoxRect.top + eyelidBoxRect.height / 2 - svgContainer.top,
+                    isStraight: true,
+                },
+                {
+                    id: 'ocular',
+                    color: colors.purple,
+                    startX:
+                        ocularDiamondRect.left +
+                        ocularDiamondRect.width * 0.26 -
+                        svgContainer.left,
+                    startY:
+                        ocularDiamondRect.top +
+                        ocularDiamondRect.height * 0.72 -
+                        svgContainer.top,
+                    endX: ocularBoxRect.right - svgContainer.left,
+                    endY: ocularBoxRect.top + ocularBoxRect.height / 2 - svgContainer.top,
+                    isStraight: true,
+                },
+            ]
+        } else {
+            // LTR default
+            paths = [
+                {
+                    id: 'tear',
+                    color: colors.blue,
+                    startX:
+                        tearDiamondRect.left + tearDiamondRect.width * 0.75 - svgContainer.left,
+                    startY: tearDiamondRect.top + tearDiamondRect.height * 0.24 - svgContainer.top,
+                    endX: tearBoxRect.left - svgContainer.left,
+                    endY: tearBoxRect.top + tearBoxRect.height / 2 - svgContainer.top,
+                    isStraight: true,
+                },
+                {
+                    id: 'eyelid',
+                    color: colors.teal,
+                    startX: eyelidDiamondRect.right - 10 - svgContainer.left,
+                    startY:
+                        eyelidDiamondRect.top +
+                        eyelidDiamondRect.height * 0.47 -
+                        svgContainer.top,
+                    endX: eyelidBoxRect.left - svgContainer.left,
+                    endY: eyelidBoxRect.top + eyelidBoxRect.height / 2 - svgContainer.top,
+                    isStraight: true,
+                },
+                {
+                    id: 'ocular',
+                    color: colors.purple,
+                    startX:
+                        ocularDiamondRect.left +
+                        ocularDiamondRect.width * 0.74 -
+                        svgContainer.left,
+                    startY:
+                        ocularDiamondRect.top +
+                        ocularDiamondRect.height * 0.72 -
+                        svgContainer.top,
+                    endX: ocularBoxRect.left - svgContainer.left,
+                    endY: ocularBoxRect.top + ocularBoxRect.height / 2 - svgContainer.top,
+                    isStraight: true,
+                },
+            ]
+        }
 
         svgPaths.value = paths
     }
 
     // Update layout measurements (alignment only, no scaling)
     async function updateLayout(nextTick) {
-        // Only calculate alignment margins once on initial mount
+        // Only calculate alignment margins once (reset externally on locale change)
         if (!marginsCalculated.value) {
             // First reset margins to measure true positions
             boxesMarginTop.value = 0
@@ -168,6 +225,7 @@ export const useLayoutStore = defineStore('layout', () => {
         svgPaths,
         boxesMarginTop,
         diamondsMarginTop,
+        marginsCalculated,
         contentTopOffset,
         colors,
 

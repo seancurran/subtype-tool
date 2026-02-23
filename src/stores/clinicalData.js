@@ -1,483 +1,198 @@
 import { reactive, computed } from 'vue'
 import { defineStore } from 'pinia'
+import { i18n } from '@/i18n'
+
+// Static base config — color and diamond type never change with locale
+const subcategoryBase = {
+    lipid: { color: 'blue', diamond: 'tear' },
+    aqueous: { color: 'blue', diamond: 'tear' },
+    'mucin-glycocalyx': { color: 'blue', diamond: 'tear' },
+    'blink-lid-closure': { color: 'teal', diamond: 'eyelid' },
+    'lid-margin': { color: 'teal', diamond: 'eyelid' },
+    'anatomical-misalignment': { color: 'purple', diamond: 'ocular' },
+    'neural-dysfunction': { color: 'purple', diamond: 'ocular' },
+    'ocular-surface-cellular': { color: 'purple', diamond: 'ocular' },
+    'primary-inflammation': { color: 'purple', diamond: 'ocular' },
+}
 
 export const useClinicalDataStore = defineStore('clinicalData', () => {
-    // Testing data for each subcategory
-    const testingData = {
-        lipid: {
-            standard: [
-                {
-                    name: 'INTERFEROMETRY',
-                    description:
-                        'grade ≤ 3 (non-amorphous or colored pattern) or <72nm on LipiView',
-                },
-                {
-                    name: 'MEIBUM EXPRESSIBILITY/QUALITY',
-                    description: 'meibum not clear or limited expressibility',
-                },
-            ],
-            advanced: null,
-        },
-        aqueous: {
-            standard: [
-                {
-                    name: 'MENISCOMETRY',
-                    description: 'tear meniscus height ≤0.20mm',
-                },
-            ],
-            advanced: [
-                {
-                    name: 'STRIP MENISCOMETRY',
-                    description: '2.5mm wetting length',
-                },
-                {
-                    name: 'TEAR PROTEINS AND OTHER CHEMICAL COMPONENTS TESTING',
-                },
-            ],
-        },
-        'mucin-glycocalyx': {
-            standard: [
-                {
-                    name: 'ROSE BENGAL OR LISSAMINE GREEN STAINING',
-                    description: '>9 punctate spots',
-                },
-            ],
-            advanced: [
-                {
-                    name: 'IMMUNOHISTOCHEMISTRY AND IMMUNOELECTRON MICROSCOPY OF TEAR FILM',
-                },
-                {
-                    name: 'IMPRESSION CYTOLOGY',
-                    description: 'Goblet cell density and epithelial cell morphology',
-                },
-            ],
-        },
-        'blink-lid-closure': {
-            standard: [
-                {
-                    name: 'PARTIAL BLINKING OBSERVATION',
-                    description: '>40% occurrence',
-                },
-                {
-                    name: 'LAGOPHTHALMOS / INADEQUATE LID SEAL',
-                    description: 'Observed',
-                },
-            ],
-            advanced: null,
-        },
-        'lid-margin': {
-            standard: [{ name: 'ANTERIOR BLEPHARITIS OBSERVATION' }, { name: 'MGD' }],
-            advanced: [
-                {
-                    name: 'MEIBOGRAPHY',
-                    description: 'Gland length <75%',
-                },
-                {
-                    name: 'GLAND PLUGGING',
-                    description: 'Observed',
-                },
-                {
-                    name: 'TELANGIECTASIA',
-                    description: 'Observed',
-                },
-                { name: 'GLAND EXPRESSIBILITY' },
-            ],
-        },
-        'anatomical-misalignment': {
-            standard: [{ name: 'SLIT-LAMP BIOMICROSCOPY' }],
-            advanced: [{ name: 'CORNEAL TOPOGRAPHY' }],
-        },
-        'neural-dysfunction': {
-            standard: [
-                {
-                    name: 'PUFF OR PHYSICAL SENSATION',
-                    description:
-                        'Corneal and lid margin sensitivity thresholds ≥0.8 mbar although instruments are not comparable',
-                },
-            ],
-            advanced: [
-                {
-                    name: 'IN VIVO CONFOCAL MICROSCOPY',
-                    description:
-                        'Normative values available for nerve length, branch and density metrics',
-                },
-            ],
-        },
-        'ocular-surface-cellular': {
-            standard: [
-                {
-                    name: 'CORNEAL FLUORESCEIN STAINING',
-                    description: '>5 punctate spots',
-                },
-                {
-                    name: 'CONJUNCTIVAL LISSAMINE GREEN STAINING',
-                    description: '>9 punctate spots',
-                },
-                {
-                    name: 'LID WIPER STAINING',
-                    description: '>2mm length and 25% width',
-                },
-            ],
-            advanced: null,
-        },
-        'primary-inflammation': {
-            standard: [
-                {
-                    name: 'BULBAR CONJUNCTIVAL HYPERAEMIA',
-                    description: '>1.5 Efron scale or >0.95 objective JENVIS',
-                },
-            ],
-            advanced: [
-                { name: 'IN VIVO CONFOCAL MICROSCOPY' },
-                { name: 'TEAR FILM AND OCULAR SURFACE MOLECULAR TESTING' },
-            ],
-        },
-    }
-
-    // Management items for each subcategory (reactive for checkbox state)
-    const managementItems = reactive({
+    // Pure boolean checkbox state — no text, shape mirrors management locale data
+    const checkState = reactive({
         lipid: [
-            { label: 'LIFESTYLE ADVICE', description: 'To be considered', checked: false },
-            {
-                label: 'TEAR SUPPLEMENTATION/STABILISATION',
-                description: 'Lipomimetics',
-                checked: false,
-            },
-            {
-                label: 'TEAR CONSERVATION DEVICES',
-                description: 'Moisture chamber spectacles',
-                checked: false,
-            },
-            {
-                label: 'PHARMACOLOGICAL TEAR STIMULATION/RESTORATION',
-                description: 'Topical secretagogues',
-                checked: false,
-            },
-            {
-                label: 'DEVICE TEAR STIMULATION/RESTORATION',
-                description:
-                    'Internal and external device lid heating; IPL, LLLT\nIPL\nWarm compress',
-                checked: false,
-            },
-            { label: 'BLINK THERAPIES', description: '', checked: false },
-            { label: 'TOPICAL ANTI-INFLAMMATORIES', description: 'Cyclosporine A', checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
         ],
         aqueous: [
-            { label: 'LIFESTYLE ADVICE', description: 'To be considered', checked: false },
-            { label: 'ORAL NUTRITION', description: 'Omega 3', checked: false },
-            {
-                label: 'TEAR SUPPLEMENTATION/STABILISATION',
-                description: 'Artificial tears',
-                checked: false,
-            },
-            {
-                label: 'TEAR CONSERVATION DEVICES',
-                description: 'Moisture chamber spectacles\nPunctal plugs\nScleral contact lenses',
-                checked: false,
-            },
-            {
-                label: 'PHARMACOLOGICAL TEAR STIMULATION/RESTORATION',
-                description:
-                    'Selenium sulfide\nPharmacological neurostimulation\nTopical neurostimulation',
-                checked: false,
-            },
-            {
-                label: 'DEVICE TEAR STIMULATION/RESTORATION',
-                description: 'Neurostimulation\nLLLT',
-                checked: false,
-            },
-            { label: 'TOPICAL ANTI-INFLAMMATORIES', description: '', checked: false },
-            { label: 'OCULAR SURFACE REGENERATORS', description: 'Biologics', checked: false },
-            { label: 'SURGICAL OPTIONS', description: '', checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
         ],
         'mucin-glycocalyx': [
-            { label: 'LIFESTYLE ADVICE', description: 'To be considered', checked: false },
-            {
-                label: 'PHARMACOLOGICAL TEAR STIMULATION/RESTORATION',
-                description: '',
-                checked: false,
-            },
-            {
-                label: 'DEVICE TEAR STIMULATION/RESTORATION',
-                description: 'Neurostimulation',
-                checked: false,
-            },
-            { label: 'TOPICAL ANTI-INFLAMMATORIES', description: '', checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
         ],
         'blink-lid-closure': [
-            { label: 'LIFESTYLE ADVICE', description: 'To be considered', checked: false },
-            {
-                label: 'TEAR CONSERVATION DEVICES',
-                description: 'Moisture chamber spectacles',
-                checked: false,
-            },
-            { label: 'BLINK THERAPIES', description: '', checked: false },
-            { label: 'SURGICAL OPTIONS', description: '', checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
         ],
         'lid-margin': [
             {
-                label: 'ANTERIOR BLEPHARITIS',
-                description: '',
                 checked: false,
-                subOptions: [
-                    { label: 'LIFESTYLE ADVICE', description: 'To be considered', checked: false },
-                    {
-                        label: 'TOPICAL LID HYGIENE (e.g. reducing bacterial load)',
-                        description: '',
-                        checked: false,
-                    },
-                    { label: 'ORAL ANTIBIOTICS', description: '', checked: false },
-                ],
+                subOptions: [{ checked: false }, { checked: false }, { checked: false }],
             },
             {
-                label: 'MEIBOMIAN GLAND DYSFUNCTION',
-                description: '',
                 checked: false,
                 subOptions: [
-                    { label: 'LIFESTYLE ADVICE', description: 'To be considered', checked: false },
-                    { label: 'ORAL NUTRITION', description: 'Omega 3\nVitamin D3', checked: false },
-                    {
-                        label: 'TEAR SUPPLEMENTATION/STABILISATION',
-                        description: 'Lipomimetics',
-                        checked: false,
-                    },
-                    {
-                        label: 'PHARMACOLOGICAL TEAR STIMULATION/RESTORATION',
-                        description: 'Topical azithromycin, Selenium sulfide',
-                        checked: false,
-                    },
-                    {
-                        label: 'DEVICE TEAR STIMULATION/RESTORATION',
-                        description: 'Internal and external device lid heating; IPL, LLLT; QMR',
-                        checked: false,
-                    },
-                    {
-                        label: 'LID MARGIN DEBRIDEMENT',
-                        description: 'When significant keratinization',
-                        checked: false,
-                    },
-                    {
-                        label: 'BLINK THERAPIES',
-                        description: '',
-                        checked: false,
-                    },
-                    {
-                        label: 'TOPICAL ANTI-INFLAMMATORIES',
-                        description: 'Cyclosporine A',
-                        checked: false,
-                    },
-                    { label: 'ORAL ANTIBIOTICS', description: '', checked: false },
+                    { checked: false },
+                    { checked: false },
+                    { checked: false },
+                    { checked: false },
+                    { checked: false },
+                    { checked: false },
+                    { checked: false },
+                    { checked: false },
+                    { checked: false },
                 ],
             },
         ],
-        'anatomical-misalignment': [
-            { label: 'LIFESTYLE ADVICE', description: 'To be considered', checked: false },
-            { label: 'SURGICAL OPTIONS', description: '', checked: false },
-        ],
+        'anatomical-misalignment': [{ checked: false }, { checked: false }],
         'neural-dysfunction': [
-            { label: 'LIFESTYLE ADVICE', description: 'To be considered', checked: false },
-            {
-                label: 'TEAR SUPPLEMENTATION/STABILISATION',
-                description: 'Vit A/B12 ascorbic acid',
-                checked: false,
-            },
-            { label: 'OCULAR SURFACE REGENERATORS', description: 'Biologics', checked: false },
-            { label: 'SURGICAL OPTIONS', description: 'Punctal occlusion', checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
         ],
         'ocular-surface-cellular': [
-            { label: 'LIFESTYLE ADVICE', description: 'To be considered', checked: false },
-            { label: 'ORAL NUTRITION', description: 'Vitamin D3', checked: false },
-            {
-                label: 'TEAR SUPPLEMENTATION/STABILISATION',
-                description: 'Hyaluronic acid, trehalose, xanthan, perfluorohexyloctane & HP-guar',
-                checked: false,
-            },
-            {
-                label: 'PHARMACOLOGICAL TEAR STIMULATION/RESTORATION',
-                description:
-                    'Oral secretagogues\nTopical secretagogues\nPharmacological neuromodulation',
-                checked: false,
-            },
-            {
-                label: 'DEVICE TEAR STIMULATION/RESTORATION',
-                description:
-                    'LLLT; QMR; neurostimulation\nIPL; probing external device lid heating; topical secretagogues',
-                checked: false,
-            },
-            {
-                label: 'BLINK THERAPIES',
-                description: 'External device lid heating, topical secretagogues',
-                checked: false,
-            },
-            { label: 'TOPICAL LID HYGIENE', description: '', checked: false },
-            { label: 'TOPICAL ANTI-INFLAMMATORIES', description: '', checked: false },
-            {
-                label: 'OCULAR SURFACE REGENERATORS',
-                description: 'Lubricin Biologics',
-                checked: false,
-            },
-            { label: 'SURGICAL OPTIONS', description: 'Punctal occlusion', checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
+            { checked: false },
         ],
         'primary-inflammation': [
             {
-                label: 'PRIMARY',
-                description: '',
                 checked: false,
-                subOptions: [
-                    { label: 'LIFESTYLE ADVICE', description: 'To be considered', checked: false },
-                    { label: 'TOPICAL ANTI-INFLAMMATORIES', description: '', checked: false },
-                    {
-                        label: 'OCULAR SURFACE REGENERATORS',
-                        description: 'Amniotic membrane',
-                        checked: false,
-                    },
-                ],
+                subOptions: [{ checked: false }, { checked: false }, { checked: false }],
             },
             {
-                label: 'SECONDARY',
-                description: '',
                 checked: false,
                 subOptions: [
-                    { label: 'LIFESTYLE ADVICE', description: 'To be considered', checked: false },
-                    {
-                        label: 'ORAL NUTRITION',
-                        description: 'Omega 3, vitamin D3',
-                        checked: false,
-                    },
-                    {
-                        label: 'TEAR SUPPLEMENTATION/STABILISATION',
-                        description: 'Hyaluronic acid, selenoprotein P, xanthan & HP-guar, serum',
-                        checked: false,
-                    },
-                    {
-                        label: 'TEAR CONSERVATION DEVICES',
-                        description: 'Pharmacological modulation',
-                        checked: false,
-                    },
-                    {
-                        label: 'PHARMACOLOGICAL TEAR STIMULATION/RESTORATION',
-                        description: 'Pharmacological neuromodulation',
-                        checked: false,
-                    },
-                    {
-                        label: 'DEVICE TEAR STIMULATION/RESTORATION',
-                        description: 'IPL',
-                        checked: false,
-                    },
-                    { label: 'LID MARGIN DEBRIDEMENT', description: '', checked: false },
-                    { label: 'BLINK THERAPIES', description: '', checked: false },
-                    {
-                        label: 'TOPICAL LID HYGIENE (e.g. reducing bacterial load)',
-                        description: '',
-                        checked: false,
-                    },
-                    { label: 'TOPICAL ANTI-INFLAMMATORIES', description: '', checked: false },
-                    {
-                        label: 'OCULAR SURFACE REGENERATORS',
-                        description: 'Amniotic membrane',
-                        checked: false,
-                    },
-                    { label: 'SURGICAL OPTIONS', description: 'Punctal occlusion', checked: false },
+                    { checked: false },
+                    { checked: false },
+                    { checked: false },
+                    { checked: false },
+                    { checked: false },
+                    { checked: false },
+                    { checked: false },
+                    { checked: false },
+                    { checked: false },
+                    { checked: false },
+                    { checked: false },
+                    { checked: false },
                 ],
             },
         ],
     })
 
-    // Subcategory configuration with display info
-    const subcategoryConfig = {
-        // Tear Film Deficiencies
-        lipid: {
-            category: 'TEAR FILM DEFICIENCIES',
-            title: 'LIPID',
-            color: 'blue',
-            diamond: 'tear',
-        },
-        aqueous: {
-            category: 'TEAR FILM DEFICIENCIES',
-            title: 'AQUEOUS',
-            color: 'blue',
-            diamond: 'tear',
-        },
-        'mucin-glycocalyx': {
-            category: 'TEAR FILM DEFICIENCIES',
-            title: 'MUCIN GLYCOCALYX',
-            color: 'blue',
-            diamond: 'tear',
-        },
-        // Eyelid Anomalies
-        'blink-lid-closure': {
-            category: 'EYELID ANOMALIES',
-            title: 'BLINK / LID CLOSURE',
-            color: 'teal',
-            diamond: 'eyelid',
-        },
-        'lid-margin': {
-            category: 'EYELID ANOMALIES',
-            title: 'LID MARGIN',
-            color: 'teal',
-            diamond: 'eyelid',
-        },
-        // Ocular Surface Abnormalities
-        'anatomical-misalignment': {
-            category: 'OCULAR SURFACE ABNORMALITIES',
-            title: 'ANATOMICAL MISALIGNMENT',
-            color: 'purple',
-            diamond: 'ocular',
-        },
-        'neural-dysfunction': {
-            category: 'OCULAR SURFACE ABNORMALITIES',
-            title: 'NEURAL DYSFUNCTION',
-            color: 'purple',
-            diamond: 'ocular',
-        },
-        'ocular-surface-cellular': {
-            category: 'OCULAR SURFACE ABNORMALITIES',
-            title: 'CELLULAR DAMAGE',
-            color: 'purple',
-            diamond: 'ocular',
-        },
-        'primary-inflammation': {
-            category: 'OCULAR SURFACE ABNORMALITIES',
-            title: 'INFLAMMATION',
-            color: 'purple',
-            diamond: 'ocular',
-        },
+    // Helper to get locale messages safely with fallback to English
+    function getMessages() {
+        const locale = i18n.global.locale.value
+        return i18n.global.messages.value[locale] || i18n.global.messages.value['en']
     }
 
-    // Getters
+    // Getters — merge locale text with checkbox state at read time
+
     function getTestingData(subcategoryId) {
-        return testingData[subcategoryId] || { standard: [], advanced: [] }
+        // Access locale to make this reactive when called inside a computed
+        const messages = getMessages()
+        return messages?.testing?.[subcategoryId] || { standard: [], advanced: null }
     }
 
     function getManagementItems(subcategoryId) {
-        return managementItems[subcategoryId] || []
+        const messages = getMessages()
+        const items = messages?.management?.[subcategoryId] || []
+        const states = checkState[subcategoryId] || []
+
+        return states.map((state, i) => ({
+            checked: state.checked,
+            label: items[i]?.label ?? '',
+            description: items[i]?.description ?? '',
+            ...(state.subOptions
+                ? {
+                      subOptions: state.subOptions.map((sub, j) => ({
+                          checked: sub.checked,
+                          label: items[i]?.subOptions?.[j]?.label ?? '',
+                          description: items[i]?.subOptions?.[j]?.description ?? '',
+                      })),
+                  }
+                : {}),
+        }))
     }
 
     function getSubcategoryConfig(subcategoryId) {
-        return subcategoryConfig[subcategoryId] || null
+        const messages = getMessages()
+        const base = subcategoryBase[subcategoryId]
+        if (!base) return null
+        const textConfig = messages?.config?.[subcategoryId]
+        return {
+            ...base,
+            category: textConfig?.category ?? '',
+            title: textConfig?.title ?? '',
+        }
     }
 
+    // Write only checked booleans back to checkState
     function updateManagementItems(subcategoryId, newItems) {
-        if (managementItems[subcategoryId]) {
-            managementItems[subcategoryId] = newItems
-        }
+        const states = checkState[subcategoryId]
+        if (!states) return
+        newItems.forEach((item, i) => {
+            if (states[i]) {
+                states[i].checked = item.checked
+                if (item.subOptions && states[i].subOptions) {
+                    item.subOptions.forEach((sub, j) => {
+                        if (states[i].subOptions[j]) {
+                            states[i].subOptions[j].checked = sub.checked
+                        }
+                    })
+                }
+            }
+        })
     }
 
     // Get all subcategory IDs
     function getAllSubcategoryIds() {
-        return Object.keys(subcategoryConfig)
+        return Object.keys(subcategoryBase)
     }
 
-    // Helper function to check if a subcategory has any checked items
+    // Helper to check if a subcategory has any checked items (uses checkState only)
     function hasCheckedItemsInSubcategory(subcategoryId) {
-        const items = managementItems[subcategoryId]
-        if (!items) return false
-        for (const item of items) {
-            if (item.checked) return true
-            // Check sub-options if they exist
-            if (item.subOptions) {
-                for (const subItem of item.subOptions) {
-                    if (subItem.checked) return true
+        const states = checkState[subcategoryId]
+        if (!states) return false
+        for (const state of states) {
+            if (state.checked) return true
+            if (state.subOptions) {
+                for (const sub of state.subOptions) {
+                    if (sub.checked) return true
                 }
             }
         }
@@ -486,7 +201,7 @@ export const useClinicalDataStore = defineStore('clinicalData', () => {
 
     // Check if any checkbox is checked across all management items
     const hasAnyCheckboxChecked = computed(() => {
-        for (const subcategoryId of Object.keys(managementItems)) {
+        for (const subcategoryId of Object.keys(checkState)) {
             if (hasCheckedItemsInSubcategory(subcategoryId)) return true
         }
         return false
@@ -519,7 +234,7 @@ export const useClinicalDataStore = defineStore('clinicalData', () => {
         )
     })
 
-    // Get all checked items across the entire app, organized by category
+    // Get all checked items organized by category (translated labels via getManagementItems)
     function getAllCheckedItems() {
         const result = {
             tearFilmDeficiencies: [],
@@ -527,10 +242,9 @@ export const useClinicalDataStore = defineStore('clinicalData', () => {
             ocularSurfaceAbnormalities: [],
         }
 
-        // Helper to extract checked items from a subcategory
         const extractCheckedItems = (subcategoryId) => {
-            const items = managementItems[subcategoryId]
-            const config = subcategoryConfig[subcategoryId]
+            const items = getManagementItems(subcategoryId)
+            const config = getSubcategoryConfig(subcategoryId)
             if (!items || !config) return []
 
             const checkedItems = []
@@ -542,7 +256,6 @@ export const useClinicalDataStore = defineStore('clinicalData', () => {
                         description: item.description || '',
                     })
                 }
-                // Check sub-options if they exist
                 if (item.subOptions) {
                     for (const subItem of item.subOptions) {
                         if (subItem.checked) {
@@ -559,16 +272,13 @@ export const useClinicalDataStore = defineStore('clinicalData', () => {
             return checkedItems
         }
 
-        // Tear Film Deficiencies
         result.tearFilmDeficiencies.push(...extractCheckedItems('lipid'))
         result.tearFilmDeficiencies.push(...extractCheckedItems('aqueous'))
         result.tearFilmDeficiencies.push(...extractCheckedItems('mucin-glycocalyx'))
 
-        // Eyelid Anomalies
         result.eyelidAnomalies.push(...extractCheckedItems('blink-lid-closure'))
         result.eyelidAnomalies.push(...extractCheckedItems('lid-margin'))
 
-        // Ocular Surface Abnormalities
         result.ocularSurfaceAbnormalities.push(...extractCheckedItems('anatomical-misalignment'))
         result.ocularSurfaceAbnormalities.push(...extractCheckedItems('neural-dysfunction'))
         result.ocularSurfaceAbnormalities.push(...extractCheckedItems('ocular-surface-cellular'))
@@ -578,9 +288,7 @@ export const useClinicalDataStore = defineStore('clinicalData', () => {
     }
 
     return {
-        testingData,
-        managementItems,
-        subcategoryConfig,
+        checkState,
         getTestingData,
         getManagementItems,
         getSubcategoryConfig,

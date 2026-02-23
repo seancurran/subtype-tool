@@ -1,10 +1,10 @@
 <script setup>
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import ContentBox from '@/components/ContentBox.vue'
 import emailIcon from '@/assets/images/email-icon.png'
 
-// Titles that need smaller font size due to length
-const longTitles = ['ANATOMICAL MISALIGNMENT', 'NEURAL DYSFUNCTION', 'INFLAMMATION']
+const { t } = useI18n()
 
 const props = defineProps({
     color: {
@@ -50,8 +50,9 @@ const handleNext = () => {
     emit('next')
 }
 
+// Use character-length check so it works for any language
 const titleSizeClass = computed(() => {
-    return longTitles.includes(props.title) ? 'text-base' : 'text-xl'
+    return props.title.length > 20 ? 'text-base' : 'text-xl'
 })
 </script>
 
@@ -78,7 +79,7 @@ const titleSizeClass = computed(() => {
                     "
                 >
                     <img :src="emailIcon" alt="Email" class="w-14 h-14 object-contain ml-2" />
-                    <span class="text-[10px] font-bold tracking-wider">EMAIL</span>
+                    <span class="text-[10px] font-bold tracking-wider">{{ t('panel.email') }}</span>
                 </button>
             </template>
         </ContentBox>
@@ -98,8 +99,9 @@ const titleSizeClass = computed(() => {
                         : 'text-gray-500 hover:text-gray-700 cursor-pointer'
                 "
             >
-                <span class="text-2xl mb-1 leading-5">←</span>
-                <span class="text-[10px] font-medium tracking-wide">PREVIOUS</span>
+                <span class="text-2xl mb-1 leading-5 rtl:hidden">←</span>
+                <span class="text-2xl mb-1 leading-5 hidden rtl:block">→</span>
+                <span class="text-[10px] font-medium tracking-wide">{{ t('panel.previous') }}</span>
             </button>
 
             <!-- Spacer for the center email button area -->
@@ -116,8 +118,9 @@ const titleSizeClass = computed(() => {
                         : 'text-gray-500 hover:text-gray-700 cursor-pointer'
                 "
             >
-                <span class="text-2xl mb-1 leading-5">→</span>
-                <span class="text-[10px] font-medium tracking-wide">NEXT</span>
+                <span class="text-2xl mb-1 leading-5 rtl:hidden">→</span>
+                <span class="text-2xl mb-1 leading-5 hidden rtl:block">←</span>
+                <span class="text-[10px] font-medium tracking-wide">{{ t('panel.next') }}</span>
             </button>
         </div>
     </div>

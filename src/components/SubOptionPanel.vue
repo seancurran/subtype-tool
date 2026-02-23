@@ -1,11 +1,14 @@
 <script setup>
 import { computed, inject } from 'vue'
+import { useI18n } from 'vue-i18n'
 import SubOptionBox from './SubOptionBox.vue'
 import TestingSection from './TestingSection.vue'
 import ManagementSection from './ManagementSection.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { useClinicalDataStore } from '@/stores/clinicalData'
 import { useLayoutStore } from '@/stores/layout'
+
+const { t } = useI18n()
 
 const props = defineProps({
     subcategoryId: {
@@ -24,10 +27,10 @@ const openEmailModal = inject('openEmailModal')
 // Get configuration for this subcategory
 const config = computed(() => clinicalDataStore.getSubcategoryConfig(props.subcategoryId))
 
-// Get testing data
+// Get testing data (reactive to locale changes via i18n.global.locale dependency)
 const testingData = computed(() => clinicalDataStore.getTestingData(props.subcategoryId))
 
-// Get management items
+// Get management items (reactive to locale changes)
 const managementItems = computed(() => clinicalDataStore.getManagementItems(props.subcategoryId))
 
 // Check if email button should be disabled (no checkboxes checked anywhere)
@@ -71,13 +74,13 @@ function handleEmail() {
         >
             <TestingSection
                 v-if="testingData.standard && testingData.standard.length > 0"
-                title="STANDARD TESTING"
+                :title="t('panel.standardTesting')"
                 :color="config.color"
                 :items="testingData.standard"
             />
             <TestingSection
                 v-if="testingData.advanced && testingData.advanced.length > 0"
-                title="ADVANCED TESTING"
+                :title="t('panel.advancedTesting')"
                 :color="config.color"
                 :items="testingData.advanced"
             />

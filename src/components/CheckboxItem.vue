@@ -1,6 +1,4 @@
 <script setup>
-import { computed } from 'vue'
-
 const props = defineProps({
     checked: {
         type: Boolean,
@@ -26,7 +24,7 @@ const toggle = () => {
 <template>
     <button
         @click="toggle"
-        class="flex items-start gap-3 text-left w-full hover:bg-gray-50 rounded p-1 -ml-1 transition-colors"
+        class="flex items-start gap-3 text-start w-full hover:bg-gray-50 rounded p-1 -ml-1 rtl:-mr-1 rtl:ml-0 transition-colors"
     >
         <!-- Checkbox -->
         <div

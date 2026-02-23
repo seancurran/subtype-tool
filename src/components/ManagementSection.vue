@@ -1,7 +1,10 @@
 <script setup>
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import CheckboxItem from './CheckboxItem.vue'
 import eyeIcon from '@/assets/images/eye-icon.png'
+
+const { t } = useI18n()
 
 const props = defineProps({
     color: {
@@ -71,7 +74,7 @@ const hasSubOptions = (item) => {
                 :class="colorClasses.bg"
             >
                 <div class="text-white text-center font-bold text-sm tracking-wide">
-                    DRY EYE DISEASE MANAGEMENT
+                    {{ t('panel.management') }}
                 </div>
             </div>
 
@@ -88,7 +91,7 @@ const hasSubOptions = (item) => {
                         <!-- Sub-options that expand when parent is checked -->
                         <div
                             v-if="hasSubOptions(item) && item.checked"
-                            class="pl-8 space-y-2 border-l-2 border-gray-200 ml-2 mt-1"
+                            class="pl-8 rtl:pl-0 rtl:pr-8 space-y-2 border-l-2 rtl:border-l-0 rtl:border-r-2 border-gray-200 ml-2 rtl:ml-0 rtl:mr-2 mt-1"
                         >
                             <CheckboxItem
                                 v-for="(subItem, subIndex) in item.subOptions"

@@ -1,11 +1,13 @@
 <script setup>
 import { ref, onMounted, nextTick, watch, provide } from 'vue'
+import { useI18n } from 'vue-i18n'
 import MainNav from '@/components/MainNav.vue'
 import DiamondButtons from '@/components/DiamondButtons.vue'
 import ContentBoxWithBracket from '@/components/ContentBoxWithBracket.vue'
 import HowToUse from '@/components/HowToUse.vue'
 import SubOptionPanel from '@/components/SubOptionPanel.vue'
 import EmailModal from '@/components/EmailModal.vue'
+import LanguageSelector from '@/components/LanguageSelector.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { useLayoutStore } from '@/stores/layout'
 import { useClinicalDataStore } from '@/stores/clinicalData'
@@ -13,6 +15,8 @@ import { useClinicalDataStore } from '@/stores/clinicalData'
 const navigationStore = useNavigationStore()
 const layoutStore = useLayoutStore()
 const clinicalDataStore = useClinicalDataStore()
+
+const { t, locale } = useI18n()
 
 const containerRef = ref(null)
 
@@ -34,6 +38,13 @@ watch([() => navigationStore.selectedDiamond, () => navigationStore.activeMenuIt
     setTimeout(updateLayout, 50)
 })
 
+// Reset margins on locale change so they're recalculated for potentially different text sizes
+watch(locale, async () => {
+    layoutStore.marginsCalculated = false
+    await nextTick()
+    setTimeout(updateLayout, 100)
+})
+
 const updateLayout = async () => {
     layoutStore.setContainerRef(containerRef.value)
     await layoutStore.updateLayout(nextTick)
@@ -50,6 +61,11 @@ const allSubcategoryIds = clinicalDataStore.getAllSubcategoryIds()
 
 <template>
     <main class="h-screen flex flex-col mx-auto p-8 overflow-auto">
+        <!-- Language selector header — dir="ltr" keeps dropdown on the physical right in all locales -->
+        <div class="flex justify-end mb-2 shrink-0" dir="ltr">
+            <LanguageSelector />
+        </div>
+
         <!-- Main Content (Above Footer) -->
         <div class="flex-1 flex items-start justify-center gap-8 min-w-0 relative min-h-0">
             <!-- SVG Connector Lines Overlay -->
@@ -169,7 +185,7 @@ const allSubcategoryIds = clinicalDataStore.getAllSubcategoryIds()
                                 >
                                     <ContentBoxWithBracket
                                         color="blue"
-                                        title="TEAR FILM DEFICIENCIES"
+                                        :title="t('boxes.tearFilmDeficiencies')"
                                         bracketConnect="top"
                                     >
                                         <ul class="list-disc list-inside space-y-1 text-sm">
@@ -177,7 +193,7 @@ const allSubcategoryIds = clinicalDataStore.getAllSubcategoryIds()
                                                 class="cursor-pointer hover:text-[#3AADE1] transition-colors"
                                                 @click="navigationStore.setActiveMenuItem('lipid')"
                                             >
-                                                Lipid
+                                                {{ t('boxes.lipid') }}
                                             </li>
                                             <li
                                                 class="cursor-pointer hover:text-[#3AADE1] transition-colors"
@@ -185,7 +201,7 @@ const allSubcategoryIds = clinicalDataStore.getAllSubcategoryIds()
                                                     navigationStore.setActiveMenuItem('aqueous')
                                                 "
                                             >
-                                                Aqueous
+                                                {{ t('boxes.aqueous') }}
                                             </li>
                                             <li
                                                 class="cursor-pointer hover:text-[#3AADE1] transition-colors"
@@ -195,7 +211,7 @@ const allSubcategoryIds = clinicalDataStore.getAllSubcategoryIds()
                                                     )
                                                 "
                                             >
-                                                Mucin/glycocalyx
+                                                {{ t('boxes.mucinGlycocalyx') }}
                                             </li>
                                         </ul>
                                     </ContentBoxWithBracket>
@@ -213,7 +229,7 @@ const allSubcategoryIds = clinicalDataStore.getAllSubcategoryIds()
                                 >
                                     <ContentBoxWithBracket
                                         color="teal"
-                                        title="EYELID ANOMALIES"
+                                        :title="t('boxes.eyelidAnomalies')"
                                         bracketConnect="top"
                                     >
                                         <ul class="list-disc list-inside space-y-1 text-sm">
@@ -225,7 +241,7 @@ const allSubcategoryIds = clinicalDataStore.getAllSubcategoryIds()
                                                     )
                                                 "
                                             >
-                                                Blink / lid closure
+                                                {{ t('boxes.blinkLidClosure') }}
                                             </li>
                                             <li
                                                 class="cursor-pointer hover:text-[#52A5A4] transition-colors"
@@ -233,7 +249,7 @@ const allSubcategoryIds = clinicalDataStore.getAllSubcategoryIds()
                                                     navigationStore.setActiveMenuItem('lid-margin')
                                                 "
                                             >
-                                                Lid margin
+                                                {{ t('boxes.lidMargin') }}
                                             </li>
                                         </ul>
                                     </ContentBoxWithBracket>
@@ -252,7 +268,7 @@ const allSubcategoryIds = clinicalDataStore.getAllSubcategoryIds()
                                 >
                                     <ContentBoxWithBracket
                                         color="purple"
-                                        title="OCULAR SURFACE ABNORMALITIES"
+                                        :title="t('boxes.ocularSurfaceAbnormalities')"
                                         bracketConnect="bottom"
                                     >
                                         <ul class="list-disc list-inside space-y-1 text-sm">
@@ -264,7 +280,7 @@ const allSubcategoryIds = clinicalDataStore.getAllSubcategoryIds()
                                                     )
                                                 "
                                             >
-                                                Anatomical misalignment
+                                                {{ t('boxes.anatomicalMisalignment') }}
                                             </li>
                                             <li
                                                 class="cursor-pointer hover:text-[#7B5295] transition-colors"
@@ -274,7 +290,7 @@ const allSubcategoryIds = clinicalDataStore.getAllSubcategoryIds()
                                                     )
                                                 "
                                             >
-                                                Neural dysfunction
+                                                {{ t('boxes.neuralDysfunction') }}
                                             </li>
                                             <li
                                                 class="cursor-pointer hover:text-[#7B5295] transition-colors"
@@ -284,7 +300,7 @@ const allSubcategoryIds = clinicalDataStore.getAllSubcategoryIds()
                                                     )
                                                 "
                                             >
-                                                Ocular surface cellular damage/disruption
+                                                {{ t('boxes.ocularSurfaceCellular') }}
                                             </li>
                                             <li
                                                 class="cursor-pointer hover:text-[#7B5295] transition-colors"
@@ -294,7 +310,7 @@ const allSubcategoryIds = clinicalDataStore.getAllSubcategoryIds()
                                                     )
                                                 "
                                             >
-                                                Primary inflammation/oxidative stress
+                                                {{ t('boxes.primaryInflammation') }}
                                             </li>
                                         </ul>
                                     </ContentBoxWithBracket>
