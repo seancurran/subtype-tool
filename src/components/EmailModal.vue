@@ -126,6 +126,7 @@ const sendEmail = async () => {
             subject: 'Dry Eye Disease Management Report',
             message: formatItemsForEmail(),
             date: new Date().toLocaleString(),
+            wheel_url: 'https://dryeye.worldcouncilofoptometry.info/interactive-dry-eye-wheel/',
         })
 
         console.log('EmailJS response:', response)
