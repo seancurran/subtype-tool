@@ -6,10 +6,10 @@ import fr from '@/locales/fr.js'
 import zh from '@/locales/zh.js'
 
 export const SUPPORTED_LOCALES = [
-    { code: 'en', label: 'EN', dir: 'ltr' },
+    { code: 'en', label: 'English', dir: 'ltr' },
     { code: 'ar', label: 'عربي', dir: 'rtl' },
-    { code: 'es', label: 'ES', dir: 'ltr' },
-    { code: 'fr', label: 'FR', dir: 'ltr' },
+    { code: 'es', label: 'Español', dir: 'ltr' },
+    { code: 'fr', label: 'Français', dir: 'ltr' },
     { code: 'zh', label: '中文', dir: 'ltr' },
 ]
 
