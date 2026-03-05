@@ -7,9 +7,9 @@ const { t } = useI18n()
 
 <template>
     <!-- How to Use Panel -->
-    <ContentBox color="grey" show-top-tab :min-height="600">
+    <ContentBox color="grey" show-top-tab :min-height="580">
         <template #tab>{{ t('nav.howToUseTabLine1') }}<br v-if="t('nav.howToUseTabLine2')" />{{ t('nav.howToUseTabLine2') }}</template>
-        <div class="max-h-[520px] overflow-y-auto">
+        <div>
             <h2 class="text-4xl font-bold text-[#05319B] mb-4">{{ t('howToUse.welcome') }}</h2>
 
             <p class="text-gray-600 mb-6">{{ t('howToUse.intro') }}</p>
