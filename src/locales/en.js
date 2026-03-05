@@ -14,6 +14,8 @@ export default {
         ocularSurfaceCellularLine2: 'damage / disruption',
         primaryInflammationLine1: 'Primary inflammation /',
         primaryInflammationLine2: 'oxidative stress',
+        howToUseTabLine1: 'HOW',
+        howToUseTabLine2: 'TO USE',
         copyright: '© {year} Alcon Inc. GLBDEOH2600001',
     },
     diamonds: {

@@ -11,7 +11,7 @@ defineProps({
     position: {
         type: String,
         default: 'top',
-        validator: (value) => ['top', 'right', 'bottom'].includes(value),
+        validator: (value) => ['top', 'right', 'bottom', 'left'].includes(value),
     },
     active: {
         type: Boolean,
@@ -33,12 +33,14 @@ const positionClasses = {
     top: 'top-[-174px]',
     right: 'right-[10px]',
     bottom: 'bottom-[-174px]',
+    left: 'left-[10px]',
 }
 
 const textTopPosition = {
     top: 'top-[80px]',
     right: 'top-[80px]',
     bottom: 'top-[78px]',
+    left: 'top-[80px]',
 }
 </script>
 

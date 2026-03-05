@@ -42,9 +42,9 @@ const gradientTo = computed(() => colorConfig[props.color].gradientTo)
 </script>
 
 <template>
-    <div class="flex items-stretch rtl:flex-row-reverse">
+    <div class="flex items-stretch">
         <!-- Bracket container - stretches to match box height -->
-        <div class="relative shrink-0 w-[30px] rtl:mr-0 rtl:-ml-[8px]" style="margin-right: -8px">
+        <div class="relative shrink-0 w-[30px] rtl:mr-0 rtl:-ml-[8px] rtl:[transform:scaleX(-1)]" style="margin-right: -8px">
             <!-- Top curve -->
             <svg
                 class="absolute top-0 left-0"
@@ -92,7 +92,7 @@ const gradientTo = computed(() => colorConfig[props.color].gradientTo)
         >
             <!-- Gradient bar on left (moves to right in RTL) -->
             <div
-                class="w-6 shrink-0 rtl:order-last"
+                class="w-6 shrink-0"
                 :style="{
                     background: `linear-gradient(to bottom, ${gradientFrom}, ${gradientTo})`,
                 }"

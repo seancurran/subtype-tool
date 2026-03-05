@@ -7,7 +7,7 @@ import tearDiamond from '@/assets/images/tear-diamond.png'
 import eyelidDiamond from '@/assets/images/eyelid-diamond.png'
 import ocularDiamond from '@/assets/images/ocular-diamond.png'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const navigationStore = useNavigationStore()
 
 // Define parent-child relationships
@@ -33,6 +33,9 @@ const isEyelidActive = computed(() => {
 const isOcularSurfaceActive = computed(() => {
     return navigationStore.selectedDiamond === null || navigationStore.selectedDiamond === 'ocular'
 })
+
+// Flip eyelid diamond to left side in RTL
+const eyelidPosition = computed(() => (locale.value === 'ar' ? 'left' : 'right'))
 
 // Diamond labels as computed HTML strings
 const tearLabel = computed(
@@ -75,8 +78,8 @@ const handleDiamondClick = (menuId) => {
 
         <div class="w-[400px] h-[400px] min-w-[400px] relative max-[1140px]:ml-[-100px]">
             <div class="top-1/2 relative flex min-w-[380px] items-center justify-center">
-                <!-- Text Block - Left side on large screens only -->
-                <div class="absolute left-[20px] text-gray-500 leading-tight max-[1140px]:hidden">
+                <!-- Text Block - Left side on large screens only (right in RTL) -->
+                <div class="absolute left-[20px] rtl:left-auto rtl:right-[20px] text-gray-500 leading-tight max-[1140px]:hidden">
                     <span class="font-bold">{{ t('diamonds.dryEyeReliefLine1') }}</span><br />{{ t('diamonds.dryEyeReliefLine2') }}
                 </div>
 
@@ -95,7 +98,7 @@ const handleDiamondClick = (menuId) => {
                 <DiamondButton
                     :image="eyelidDiamond"
                     :label="eyelidLabel"
-                    position="right"
+                    :position="eyelidPosition"
                     menu-id="eyelid-anomalies"
                     data-diamond="eyelid"
                     :active="isEyelidActive"

@@ -22,6 +22,10 @@ const props = defineProps({
         type: Boolean,
         default: false,
     },
+    minHeight: {
+        type: Number,
+        default: 540,
+    },
 })
 
 const topBarImages = {
@@ -65,7 +69,8 @@ const tabTextColor = computed(() => (props.color === 'grey' ? 'text-[#05319B]' :
 
             <!-- Main content box -->
             <div
-                class="border-2 border-[#ABABAB] rounded-3xl p-8 bg-white min-h-[540px]"
+                class="border-2 border-[#ABABAB] rounded-3xl p-8 bg-white"
+                :style="{ minHeight: minHeight + 'px' }"
                 :class="{ 'pt-[110px]': showTopTab, 'pb-[110px]': showBottomTab }"
             >
                 <slot></slot>
