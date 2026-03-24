@@ -7,7 +7,6 @@ import ContentBoxWithBracket from '@/components/ContentBoxWithBracket.vue'
 import HowToUse from '@/components/HowToUse.vue'
 import SubOptionPanel from '@/components/SubOptionPanel.vue'
 import EmailModal from '@/components/EmailModal.vue'
-import LanguageSelector from '@/components/LanguageSelector.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { useLayoutStore } from '@/stores/layout'
 import { useClinicalDataStore } from '@/stores/clinicalData'
@@ -61,11 +60,6 @@ const allSubcategoryIds = clinicalDataStore.getAllSubcategoryIds()
 
 <template>
     <main class="h-screen flex flex-col mx-auto p-8 overflow-auto">
-        <!-- Language selector header — dir="ltr" keeps dropdown on the physical right in all locales -->
-        <div class="flex justify-end mb-2 shrink-0" dir="ltr">
-            <LanguageSelector />
-        </div>
-
         <!-- Main Content (Above Footer) -->
         <div class="flex-1 flex items-start justify-center gap-8 min-w-0 relative min-h-0">
             <!-- SVG Connector Lines Overlay -->

@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import GradientButton from '@/components/GradientButton.vue'
+import LanguageSelector from '@/components/LanguageSelector.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { useClinicalDataStore } from '@/stores/clinicalData'
 
@@ -48,6 +49,11 @@ const handleNavClick = (menuId) => {
 <template>
     <!-- Left Navigation - Menu System -->
     <div class="space-y-6">
+        <!-- Language Selector -->
+        <div class="mb-4">
+            <LanguageSelector />
+        </div>
+
         <!-- Tear Film Deficiencies Section -->
         <div class="space-y-3">
             <GradientButton

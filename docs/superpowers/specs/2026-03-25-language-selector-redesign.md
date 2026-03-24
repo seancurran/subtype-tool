@@ -21,16 +21,19 @@ Replace the native `<select>` with a custom dropdown consisting of a trigger but
 **Trigger button:**
 - Displays: `[flag emoji] [native language name] ▾`
 - Styling: `text-xs text-gray-500`, `border border-gray-200 rounded-md px-2.5 py-1.5`, transparent/white background
-- Hover: border lightens to `gray-300`
+- Hover: border darkens to `gray-300` (`hover:border-gray-300`)
 - No gradient styling — sits as a secondary/subtle control above the nav
-- Wrapper uses `dir="ltr"` so flag + text always renders left-to-right regardless of active locale
 
 **Popover list:**
 - Absolutely positioned below the trigger (`top-full mt-1`), left-aligned
 - `z-50`, white background, `border border-gray-200 rounded-md shadow-sm`
 - Each row: flag emoji + native language name, `text-xs px-3 py-1.5 hover:bg-gray-50 cursor-pointer`
 - Active language: `✓` checkmark on the right, text in `text-gray-800` (vs `text-gray-500` for inactive)
-- Closes on: option selected, outside click (via `mousedown` listener on `document`)
+- Closes on: option selected, or outside click via a `mousedown` listener added to `document`
+- The `mousedown` listener must be removed in `onUnmounted` to prevent leaks (also removed when the popover closes)
+
+**RTL isolation:**
+- `dir="ltr"` must be placed on the **root element of `LanguageSelector.vue`** (the outermost `<div>`), not just the trigger button. This ensures both the trigger and the popover list are isolated from the document's RTL direction in Arabic mode, preventing broken text alignment and absolute positioning in the popover.
 
 **Flag mapping:**
 

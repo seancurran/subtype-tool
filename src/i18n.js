@@ -6,11 +6,11 @@ import fr from '@/locales/fr.js'
 import zh from '@/locales/zh.js'
 
 export const SUPPORTED_LOCALES = [
-    { code: 'en', label: 'English', dir: 'ltr' },
-    { code: 'ar', label: 'عربي', dir: 'rtl' },
-    { code: 'es', label: 'Español', dir: 'ltr' },
-    { code: 'fr', label: 'Français', dir: 'ltr' },
-    { code: 'zh', label: '中文', dir: 'ltr' },
+    { code: 'en', label: 'English', dir: 'ltr', flagCode: 'gb' },
+    { code: 'ar', label: 'عربي',    dir: 'rtl', flagCode: 'sa' },
+    { code: 'es', label: 'Español', dir: 'ltr', flagCode: 'es' },
+    { code: 'fr', label: 'Français',dir: 'ltr', flagCode: 'fr' },
+    { code: 'zh', label: '中文',    dir: 'ltr', flagCode: 'cn' },
 ]
 
 const RTL_LOCALES = ['ar']
