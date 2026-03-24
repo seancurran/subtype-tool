@@ -76,7 +76,7 @@ const handleNavClick = (menuId) => {
                 :active="navigationStore.activeMenuItem === 'mucin-glycocalyx'"
                 @click="handleNavClick('mucin-glycocalyx')"
             >
-                {{ t('nav.mucinGlycocalyx') }}
+                <span class="whitespace-pre-line leading-tight text-center">{{ t('nav.mucinGlycocalyx') }}</span>
             </GradientButton>
         </div>
 

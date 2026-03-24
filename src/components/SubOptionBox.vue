@@ -50,9 +50,12 @@ const handleNext = () => {
     emit('next')
 }
 
-// Use character-length check so it works for any language
+// Use max line length (after splitting on \n) so multi-line titles scale correctly
 const titleSizeClass = computed(() => {
-    return props.title.length > 20 ? 'text-base' : 'text-xl'
+    const maxLineLength = Math.max(...props.title.split('\n').map((l) => l.length))
+    if (maxLineLength > 28) return 'text-xs'
+    if (maxLineLength >= 20) return 'text-base'
+    return 'text-lg'
 })
 </script>
 
@@ -61,8 +64,8 @@ const titleSizeClass = computed(() => {
         <ContentBox :color="color" show-top-tab show-bottom-tab>
             <template #tab>
                 <div class="flex flex-col items-center justify-center">
-                    <span class="text-xs font-medium opacity-90">{{ category }}</span>
-                    <span class="font-bold leading-5" :class="titleSizeClass">{{ title }}</span>
+                    <span class="text-xs font-medium opacity-90 whitespace-pre-line">{{ category }}</span>
+                    <span class="font-bold leading-tight whitespace-pre-line" :class="titleSizeClass">{{ title }}</span>
                 </div>
             </template>
             <slot></slot>

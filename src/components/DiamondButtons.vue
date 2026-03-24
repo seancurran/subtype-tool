@@ -72,14 +72,14 @@ const handleDiamondClick = (menuId) => {
 <template>
     <div class="flex flex-col items-center">
         <!-- Text Block - Above diamonds on small screens, left side on large screens -->
-        <div class="text-gray-500 leading-tight text-center mb-4 max-[1140px]:block hidden">
+        <div class="text-gray-500 leading-tight text-center mb-4 max-[1140px]:block hidden whitespace-pre-line">
             <span class="font-bold">{{ t('diamonds.dryEyeReliefLine1') }}</span><br />{{ t('diamonds.dryEyeReliefLine2') }}
         </div>
 
         <div class="w-[400px] h-[400px] min-w-[400px] relative max-[1140px]:ml-[-100px]">
             <div class="top-1/2 relative flex min-w-[380px] items-center justify-center">
                 <!-- Text Block - Left side on large screens only (right in RTL) -->
-                <div class="absolute left-[20px] rtl:left-auto rtl:right-[20px] text-gray-500 leading-tight max-[1140px]:hidden">
+                <div class="absolute left-[20px] rtl:left-auto rtl:right-[20px] text-gray-500 leading-tight max-[1140px]:hidden whitespace-pre-line">
                     <span class="font-bold">{{ t('diamonds.dryEyeReliefLine1') }}</span><br />{{ t('diamonds.dryEyeReliefLine2') }}
                 </div>
 
