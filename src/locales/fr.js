@@ -1,6 +1,4 @@
 // French translations — sourced from "Dry Eye Management Map Translation (French) 202602.xlsx"
-// Keys marked [MISSING] have no French translation in the spreadsheet and fall back to English.
-// See docs/missing-translations-fr.md for the full gap list to send to the client.
 export default {
     nav: {
         tearFilmDeficiencies: 'ANOMALIES DU FILM DE LARMES',
@@ -13,19 +11,16 @@ export default {
         ocularSurfaceAbnormalities: 'ALTÉRATIONS DE LA SURFACE OCULAIRE',
         anatomicalMisalignment: 'Malalignement anatomique',
         neuralDysfunction: 'Dysfonctionnement neurologique',
-        // Full text: "DOMMAGE CELLULAIRE ET PERTURBATION DE LA SURFACE OCULAIRE"
-        // Split position not specified in spreadsheet — see missing-translations-fr.md
+
         ocularSurfaceCellularLine1: 'Dommage cellulaire et',
         ocularSurfaceCellularLine2: 'perturbation de la surface oculaire',
-        // Full text: "INFLAMMATION PRIMAIRE / STRESS OXYDATIF"
-        // Split position not specified in spreadsheet — see missing-translations-fr.md
+
         primaryInflammationLine1: 'Inflammation primaire /',
         primaryInflammationLine2: 'stress oxydatif',
-        // Full text: "Instructions d'utilisation"
-        // Split position not specified in spreadsheet — see missing-translations-fr.md
+
         howToUseTabLine1: 'Instructions',
         howToUseTabLine2: "d'utilisation",
-        copyright: '© {year} Alcon Inc. GLBDEOH2600001', // [MISSING] not in spreadsheet
+        copyright: '© {year} Alcon Inc. GLBDEOH2600001',
     },
     diamonds: {
         dryEyeReliefLine1: 'SÉCHERESSE\nOCULAIRE',

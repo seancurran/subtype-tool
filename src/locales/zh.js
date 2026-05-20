@@ -1,6 +1,4 @@
 // Simplified Chinese translations — sourced from "Dry Eye Management Map Translation (Chinese) 202603.xlsx"
-// Keys marked [MISSING] have no Chinese translation in the spreadsheet and fall back to English.
-// See docs/missing-translations-zh.md for the full gap list and queries to send to the client.
 export default {
     nav: {
         tearFilmDeficiencies: '泪液分泌不足',
@@ -20,7 +18,7 @@ export default {
         primaryInflammationLine2: '氧化应激',
         howToUseTabLine1: '使用',
         howToUseTabLine2: '方法',
-        copyright: '© {year} Alcon Inc. GLBDEOH2600001', // intentionally kept in English (legal text)
+        copyright: '© {year} Alcon Inc. GLBDEOH2600001',
     },
     diamonds: {
         dryEyeReliefLine1: '干眼',
@@ -158,7 +156,6 @@ export default {
             ],
         },
         'blink-lid-closure': {
-            // Spreadsheet combined both tests into one cell — split on newline (see query Q5)
             standard: [
                 {
                     name: '观察到不完全眨眼',

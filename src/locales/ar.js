@@ -1,6 +1,5 @@
 // Arabic translations — sourced from:
 // "Dry Eye Management Map Translation (Arabic) 202602.xlsx"
-// Sections with no Arabic in spreadsheet stay in English (panel, email, nav.copyright)
 export default {
     nav: {
         tearFilmDeficiencies: 'اختلالات طبقة الدموع',
@@ -242,44 +241,41 @@ export default {
     management: {
         lipid: [
             { label: 'نصائح نمط الحياة', description: 'لأخذها بعين الاعتبار' },
-            // Flag #8: TEAR SUPPLEMENTATION/STABILISATION label missing Arabic — stays English
-            { label: 'TEAR SUPPLEMENTATION/STABILISATION', description: 'مواد محاكية للدهون' },
+            { label: 'تكميل الدموع / تثبيتها', description: 'مواد محاكية للدهون' },
             { label: 'أدوات حفظ الدموع', description: 'النظارات ذات الحجرة المرطّبة' },
-            // Flag #9: PHARMACOLOGICAL label missing Arabic — stays English
-            { label: 'PHARMACOLOGICAL TEAR STIMULATION/RESTORATION', description: 'المحفّزات الإفرازية الموضعية' },
+            { label: 'التحفيز الدوائي للدموع / استعادتها', description: 'المحفّزات الإفرازية الموضعية' },
             {
                 label: 'تحفيز الدموع بالأجهزة / الاستعادة بالأجهزة',
                 description: 'تسخين الجفون بالأجهزة الداخلية والخارجية؛ العلاج بالضوء النبضي المكثّف (IPL)؛ العلاج بالضوء منخفض الشدة (LLLT)\nالعلاج بالضوء النبضي المكثّف\nالكمادات الدافئة',
             },
             { label: 'العلاجات الموجّهة لتحسين الرمش', description: '' },
-            // Flag #10: TOPICAL ANTI-INFLAMMATORIES label missing Arabic — stays English
-            { label: 'TOPICAL ANTI-INFLAMMATORIES', description: 'السيكلوسبورين A' },
+            { label: 'مضادات الالتهاب الموضعية', description: 'السيكلوسبورين A' },
         ],
         aqueous: [
             { label: 'نصائح نمط الحياة', description: 'لأخذها بعين الاعتبار' },
             { label: 'التغذية الفموية', description: 'أوميغا 3' },
-            { label: 'TEAR SUPPLEMENTATION/STABILISATION', description: 'الدموع الاصطناعية' },
+            { label: 'تكميل الدموع / تثبيتها', description: 'الدموع الاصطناعية' },
             {
                 label: 'أدوات حفظ الدموع',
                 description: 'النظارات ذات الحجرة المرطّبة\nسدادات القنوات الدمعية؛ العدسات الصُّلبية',
             },
             {
-                label: 'PHARMACOLOGICAL TEAR STIMULATION/RESTORATION',
+                label: 'التحفيز الدوائي للدموع / استعادتها',
                 description: 'التنظيم العصبي الدوائي\nالمُحفّزات الإفرازية الموضعية',
             },
             {
                 label: 'تحفيز الدموع بالأجهزة / الاستعادة بالأجهزة',
                 description: 'التحفيز العصبي\nالعلاج بالضوء منخفض الطاقة',
             },
-            { label: 'TOPICAL ANTI-INFLAMMATORIES', description: '' },
+            { label: 'مضادات الالتهاب الموضعية', description: '' },
             { label: 'عوامل تجديد السطح العيني', description: 'العلاجات البيولوجية' },
             { label: 'الخيارات الجراحية', description: '' },
         ],
         'mucin-glycocalyx': [
             { label: 'نصائح نمط الحياة', description: 'لأخذها بعين الاعتبار' },
-            { label: 'PHARMACOLOGICAL TEAR STIMULATION/RESTORATION', description: 'المبشرون السريون' },
+            { label: 'التحفيز الدوائي للدموع / استعادتها', description: 'المبشرون السريون' },
             { label: 'تحفيز الدموع بالأجهزة / الاستعادة بالأجهزة', description: 'التحفيز العصبي' },
-            { label: 'TOPICAL ANTI-INFLAMMATORIES', description: '' },
+            { label: 'مضادات الالتهاب الموضعية', description: '' },
         ],
         'blink-lid-closure': [
             { label: 'نصائح نمط الحياة', description: 'لأخذها بعين الاعتبار' },
@@ -303,9 +299,9 @@ export default {
                 subOptions: [
                     { label: 'نصائح نمط الحياة', description: 'لأخذها بعين الاعتبار' },
                     { label: 'التغذية الفموية', description: 'أوميغا 3\nفيتامين د3' },
-                    { label: 'TEAR SUPPLEMENTATION/STABILISATION', description: 'المواد المحاكية للدهون' },
+                    { label: 'تكميل الدموع / تثبيتها', description: 'المواد المحاكية للدهون' },
                     {
-                        label: 'PHARMACOLOGICAL TEAR STIMULATION/RESTORATION',
+                        label: 'التحفيز الدوائي للدموع / استعادتها',
                         description: 'الأزيثروميسين الموضعي؛ كبريتيد السيلينيوم',
                     },
                     {
@@ -317,7 +313,7 @@ export default {
                         description: '"في حالات التقرّن الشديد"',
                     },
                     { label: 'العلاجات الموجّهة لتحسين الرمش', description: '' },
-                    { label: 'TOPICAL ANTI-INFLAMMATORIES', description: 'السيكلوسبورين A' },
+                    { label: 'مضادات الالتهاب الموضعية', description: 'السيكلوسبورين A' },
                     { label: 'المضادات الحيوية الفموية', description: '' },
                 ],
             },
@@ -329,7 +325,7 @@ export default {
         'neural-dysfunction': [
             { label: 'نصائح نمط الحياة', description: 'لأخذها بعين الاعتبار' },
             {
-                label: 'TEAR SUPPLEMENTATION/STABILISATION',
+                label: 'تكميل الدموع / تثبيتها',
                 description: 'فيتامين أ   فيتامين ب12   حمض الأسكوربيك',
             },
             { label: 'عوامل تجديد السطح العيني', description: 'العلاجات البيولوجية' },
@@ -339,11 +335,11 @@ export default {
             { label: 'نصائح نمط الحياة', description: 'لأخذها بعين الاعتبار' },
             { label: 'التغذية الفموية', description: 'فيتامين د3' },
             {
-                label: 'TEAR SUPPLEMENTATION/STABILISATION',
+                label: 'تكميل الدموع / تثبيتها',
                 description: 'حمض الهيالورونيك، التريهالوز، الزانثان، بيرفلوروهيكسي أوكتان و HP-غوار',
             },
             {
-                label: 'PHARMACOLOGICAL TEAR STIMULATION/RESTORATION',
+                label: 'التحفيز الدوائي للدموع / استعادتها',
                 description: 'المحفّزات الإفرازية الفموية\nالمُحفّزات الإفرازية الموضعية\nالتنظيم العصبي الدوائي',
             },
             {
@@ -355,7 +351,7 @@ export default {
                 description: 'تسخين الجفون بالأجهزة الخارجية؛ المُحفّزات الإفرازية الموضعية',
             },
             { label: 'نظافة الجفن الموضعية (مثل تقليل الحمل البكتيري)', description: '' },
-            { label: 'TOPICAL ANTI-INFLAMMATORIES', description: '' },
+            { label: 'مضادات الالتهاب الموضعية', description: '' },
             { label: 'عوامل تجديد السطح العيني', description: 'البروتين المزلِّق\nالعلاجات البيولوجية' },
             { label: 'الخيارات الجراحية', description: 'انسداد القنوات الدمعية' },
         ],
@@ -365,7 +361,7 @@ export default {
                 description: '',
                 subOptions: [
                     { label: 'نصائح نمط الحياة', description: 'لأخذها بعين الاعتبار' },
-                    { label: 'TOPICAL ANTI-INFLAMMATORIES', description: '' },
+                    { label: 'مضادات الالتهاب الموضعية', description: '' },
                     { label: 'عوامل تجديد السطح العيني', description: 'الغشاء الأمنيوسي' },
                 ],
             },
@@ -376,23 +372,21 @@ export default {
                     { label: 'نصائح نمط الحياة', description: 'لأخذها بعين الاعتبار' },
                     { label: 'التغذية الفموية', description: 'أوميغا 3، فيتامين د3' },
                     {
-                        label: 'TEAR SUPPLEMENTATION/STABILISATION',
+                        label: 'تكميل الدموع / تثبيتها',
                         description: 'حمض الهيالورونيك، سيلينو بروتين P و الزانثان و المصل و HP-غوار',
                     },
                     { label: 'أدوات حفظ الدموع', description: 'التعديل الدوائي' },
                     {
-                        label: 'PHARMACOLOGICAL TEAR STIMULATION/RESTORATION',
-                        // Flag #16: Arabic missing from spreadsheet — stays English
+                        label: 'التحفيز الدوائي للدموع / استعادتها',
                         description: 'التعديل العصبي الدوائي',
                     },
                     { label: 'تحفيز الدموع بالأجهزة / الاستعادة بالأجهزة', description: 'العلاج بالضوء النبضي المكثّف' },
                     { label: 'إزالة التصقات/القشور من حافة الجفن', description: '' },
                     { label: 'العلاجات الموجّهة لتحسين الرمش', description: '' },
                     { label: 'نظافة الجفن الموضعية (مثل تقليل الحمل البكتيري)', description: '' },
-                    { label: 'TOPICAL ANTI-INFLAMMATORIES', description: '' },
+                    { label: 'مضادات الالتهاب الموضعية', description: '' },
                     {
                         label: 'عوامل تجديد السطح العيني',
-                        // Flag #17: Arabic missing from spreadsheet — stays English
                         description: 'الغشاء الأمنيوسي',
                     },
                     { label: 'الخيارات الجراحية', description: 'انسداد القنوات الدمعية' },
