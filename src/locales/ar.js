@@ -265,7 +265,7 @@ export default {
             },
             {
                 label: 'PHARMACOLOGICAL TEAR STIMULATION/RESTORATION',
-                description: 'كبريتيد السيلينيوم\nالتنظيم العصبي الدوائي\nالمُحفّزات الإفرازية الموضعية',
+                description: 'التنظيم العصبي الدوائي\nالمُحفّزات الإفرازية الموضعية',
             },
             {
                 label: 'تحفيز الدموع بالأجهزة / الاستعادة بالأجهزة',
@@ -277,7 +277,7 @@ export default {
         ],
         'mucin-glycocalyx': [
             { label: 'نصائح نمط الحياة', description: 'لأخذها بعين الاعتبار' },
-            { label: 'PHARMACOLOGICAL TEAR STIMULATION/RESTORATION', description: '' },
+            { label: 'PHARMACOLOGICAL TEAR STIMULATION/RESTORATION', description: 'المبشرون السريون' },
             { label: 'تحفيز الدموع بالأجهزة / الاستعادة بالأجهزة', description: 'التحفيز العصبي' },
             { label: 'TOPICAL ANTI-INFLAMMATORIES', description: '' },
         ],

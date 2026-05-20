@@ -267,7 +267,7 @@ export default {
             {
                 label: 'PHARMACOLOGICAL TEAR STIMULATION/RESTORATION',
                 description:
-                    'Selenium sulfide\nPharmacological neurostimulation\nTopical neurostimulation',
+                    'Pharmacological neurostimulation\nTopical neurostimulation',
             },
             {
                 label: 'DEVICE TEAR STIMULATION/RESTORATION',
@@ -279,7 +279,7 @@ export default {
         ],
         'mucin-glycocalyx': [
             { label: 'LIFESTYLE ADVICE', description: 'To be considered' },
-            { label: 'PHARMACOLOGICAL TEAR STIMULATION/RESTORATION', description: '' },
+            { label: 'PHARMACOLOGICAL TEAR STIMULATION/RESTORATION', description: 'Secretagogues' },
             { label: 'DEVICE TEAR STIMULATION/RESTORATION', description: 'Neurostimulation' },
             { label: 'TOPICAL ANTI-INFLAMMATORIES', description: '' },
         ],

@@ -275,7 +275,7 @@ export default {
             },
             {
                 label: 'STIMULATION / RÉGÉNÉRATION LACRYMALE PHARMACOLOGIQUE',
-                description: 'Disulfure de sélénium\nNeuromodulation pharmacologique # sécrétagogues locaux',
+                description: 'Neuromodulation pharmacologique # sécrétagogues locaux',
             },
             {
                 label: 'DISPOSITIF DE STIMULATION / RESTAURATION LACRYMALE',
@@ -287,7 +287,7 @@ export default {
         ],
         'mucin-glycocalyx': [
             { label: 'CONSEILS HYGIÉNO-DIÉTÉTIQUE', description: 'À considérer' },
-            { label: 'STIMULATION / RÉGÉNÉRATION LACRYMALE PHARMACOLOGIQUE', description: '' },
+            { label: 'STIMULATION / RÉGÉNÉRATION LACRYMALE PHARMACOLOGIQUE', description: 'Secretagogues' },
             { label: 'DISPOSITIF DE STIMULATION / RESTAURATION LACRYMALE', description: 'Neurostimulation' },
             { label: 'ANTI-INFLAMMATOIRES LOCAUX', description: '' },
         ],

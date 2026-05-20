@@ -270,7 +270,7 @@ export default {
             },
             {
                 label: '药物促泪修复治疗',
-                description: '二硫化硒洗剂\n药物神经调节# 局部促泪药',
+                description: '药物神经调节# 局部促泪药',
             },
             {
                 label: '器械辅助促泪 / 泪液修复',
@@ -282,7 +282,7 @@ export default {
         ],
         'mucin-glycocalyx': [
             { label: '生活方式建议', description: '需酌情评估' },
-            { label: '药物促泪修复治疗', description: '' },
+            { label: '药物促泪修复治疗', description: '促分泌剂' },
             { label: '器械辅助促泪 / 泪液修复', description: '神经刺激治疗' },
             { label: '局部抗炎药', description: '' },
         ],

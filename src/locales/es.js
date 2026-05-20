@@ -275,7 +275,7 @@ export default {
             },
             {
                 label: 'ESTIMULACIÓN / RESTAURACIÓN FARMACOLÓGICA DE LA LÁGRIMA',
-                description: 'Sulfuro de selenio\nNeuromodulación farmacológica / Secretagogos tópicos',
+                description: 'Neuromodulación farmacológica / Secretagogos tópicos',
             },
             {
                 label: 'ESTIMULACIÓN / RESTAURACIÓN DE LA LÁGRIMA MEDIANTE DISPOSITIVOS',
@@ -287,7 +287,7 @@ export default {
         ],
         'mucin-glycocalyx': [
             { label: 'RECOMENDACIONES DE ESTILO DE VIDA', description: 'A tener en cuenta' },
-            { label: 'ESTIMULACIÓN / RESTAURACIÓN FARMACOLÓGICA DE LA LÁGRIMA', description: '' },
+            { label: 'ESTIMULACIÓN / RESTAURACIÓN FARMACOLÓGICA DE LA LÁGRIMA', description: 'Secretagogos' },
             { label: 'ESTIMULACIÓN / RESTAURACIÓN DE LA LÁGRIMA MEDIANTE DISPOSITIVOS', description: 'Neuroestimulación' },
             { label: 'ANTIINFLAMATORIOS TÓPICOS', description: '' },
         ],
