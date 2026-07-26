@@ -57,6 +57,7 @@ const titleSizeClass = computed(() => {
     if (maxLineLength >= 20) return 'text-base'
     return 'text-lg'
 })
+
 </script>
 
 <template>
@@ -104,7 +105,7 @@ const titleSizeClass = computed(() => {
             >
                 <span class="text-2xl mb-1 leading-5 rtl:hidden">←</span>
                 <span class="text-2xl mb-1 leading-5 hidden rtl:block">→</span>
-                <span class="text-[10px] font-medium tracking-wide">{{ t('panel.previous') }}</span>
+                <span class="text-[10px] font-medium tracking-wide self-end relative start-[-10px] whitespace-nowrap">{{ t('panel.previous') }}</span>
             </button>
 
             <!-- Spacer for the center email button area -->
@@ -123,7 +124,7 @@ const titleSizeClass = computed(() => {
             >
                 <span class="text-2xl mb-1 leading-5 rtl:hidden">→</span>
                 <span class="text-2xl mb-1 leading-5 hidden rtl:block">←</span>
-                <span class="text-[10px] font-medium tracking-wide">{{ t('panel.next') }}</span>
+                <span class="text-[10px] font-medium tracking-wide self-start relative end-[-10px] whitespace-nowrap">{{ t('panel.next') }}</span>
             </button>
         </div>
     </div>
