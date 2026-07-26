@@ -6,7 +6,7 @@ const { locale } = useI18n()
 </script>
 
 <template>
-    <div dir="ltr" class="flex flex-wrap gap-1">
+    <div dir="ltr" class="grid grid-cols-5 gap-1">
         <button
             v-for="loc in SUPPORTED_LOCALES"
             :key="loc.code"

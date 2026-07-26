@@ -4,6 +4,11 @@ import ar from '@/locales/ar.js'
 import es from '@/locales/es.js'
 import fr from '@/locales/fr.js'
 import zh from '@/locales/zh.js'
+import nl from '@/locales/nl.js'
+import cs from '@/locales/cs.js'
+import hu from '@/locales/hu.js'
+import uk from '@/locales/uk.js'
+import ms from '@/locales/ms.js'
 
 export const SUPPORTED_LOCALES = [
     { code: 'en', label: 'English', dir: 'ltr', flagCode: 'gb' },
@@ -11,6 +16,11 @@ export const SUPPORTED_LOCALES = [
     { code: 'es', label: 'Español', dir: 'ltr', flagCode: 'es' },
     { code: 'fr', label: 'Français',dir: 'ltr', flagCode: 'fr' },
     { code: 'zh', label: '中文',    dir: 'ltr', flagCode: 'cn' },
+    { code: 'nl', label: 'Nederlands', dir: 'ltr', flagCode: 'nl' },
+    { code: 'cs', label: 'Čeština',    dir: 'ltr', flagCode: 'cz' },
+    { code: 'hu', label: 'Magyar',     dir: 'ltr', flagCode: 'hu' },
+    { code: 'uk', label: 'Українська', dir: 'ltr', flagCode: 'ua' },
+    { code: 'ms', label: 'Bahasa Melayu', dir: 'ltr', flagCode: 'my' },
 ]
 
 const RTL_LOCALES = ['ar']
@@ -22,7 +32,7 @@ export const i18n = createI18n({
     legacy: false,
     locale: savedLocale,
     fallbackLocale: 'en',
-    messages: { en, ar, es, fr, zh },
+    messages: { en, ar, es, fr, zh, nl, cs, hu, uk, ms },
 })
 
 export function setLocale(code) {
