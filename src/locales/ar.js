@@ -20,6 +20,7 @@ export default {
         howToUseTabLine1: 'كيفية الاستخدام',
         howToUseTabLine2: '',
         copyright: '© {year} Alcon Inc. GLBDEOH2600001',
+        menu: 'القائمة',
     },
     diamonds: {
         dryEyeReliefLine1: 'تخفيف جفاف العين',

@@ -18,6 +18,7 @@ export default {
         howToUseTabLine1: 'CÓMO',
         howToUseTabLine2: 'USAR',
         copyright: '© {year} Alcon Inc. GLBDEOH2600001',
+        menu: 'Menú',
     },
     diamonds: {
         dryEyeReliefLine1: 'ALIVIO DEL OJO',

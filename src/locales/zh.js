@@ -19,6 +19,7 @@ export default {
         howToUseTabLine1: '使用',
         howToUseTabLine2: '方法',
         copyright: '© {year} Alcon Inc. GLBDEOH2600001',
+        menu: '菜单',
     },
     diamonds: {
         dryEyeReliefLine1: '干眼',

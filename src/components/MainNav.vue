@@ -5,10 +5,12 @@ import GradientButton from '@/components/GradientButton.vue'
 import LanguageSelector from '@/components/LanguageSelector.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { useClinicalDataStore } from '@/stores/clinicalData'
+import { useIsMobile } from '@/composables/useIsMobile'
 
 const { t } = useI18n()
 const navigationStore = useNavigationStore()
 const clinicalDataStore = useClinicalDataStore()
+const { isMobile } = useIsMobile()
 
 const currentYear = new Date().getFullYear()
 
@@ -49,8 +51,8 @@ const handleNavClick = (menuId) => {
 <template>
     <!-- Left Navigation - Menu System -->
     <div class="space-y-6">
-        <!-- Language Selector -->
-        <div class="mb-4">
+        <!-- Language Selector (mobile has its own dropdown in the header already) -->
+        <div v-if="!isMobile" class="mb-4">
             <LanguageSelector />
         </div>
 

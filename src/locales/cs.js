@@ -18,6 +18,7 @@ export default {
         howToUseTabLine1: 'NÁVOD K',
         howToUseTabLine2: 'POUŽITÍ',
         copyright: '© {year} Alcon Inc. GLBDEOH2600001',
+        menu: 'Nabídka',
     },
     diamonds: {
         dryEyeReliefLine1: 'ÚLEVA OD\nSUCHÉHO OKA',

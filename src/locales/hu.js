@@ -18,6 +18,7 @@ export default {
         howToUseTabLine1: 'HASZNÁLATI',
         howToUseTabLine2: 'ÚTMUTATÓ',
         copyright: '© {year} Alcon Inc. GLBDEOH2600001',
+        menu: 'Menü',
     },
     diamonds: {
         dryEyeReliefLine1: 'SZÁRAZ SZEM\nENYHÍTÉSE',

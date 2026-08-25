@@ -25,6 +25,10 @@ defineProps({
         type: String,
         default: '',
     },
+    labelSizeClass: {
+        type: String,
+        default: 'text-xs',
+    },
 })
 
 const emit = defineEmits(['click'])
@@ -61,8 +65,8 @@ const textTopPosition = {
         @click="emit('click', menuId)"
     >
         <div
-            class="absolute font-semibold text-xs text-center w-full leading-tight"
-            :class="textTopPosition[position]"
+            class="absolute font-semibold text-center w-full leading-tight"
+            :class="[textTopPosition[position], labelSizeClass]"
             v-html="label"
         ></div>
     </div>

@@ -18,6 +18,7 @@ export default {
         howToUseTabLine1: 'Instructies',
         howToUseTabLine2: '',
         copyright: '© {year} Alcon Inc. GLBDEOH2600001',
+        menu: 'Menu',
     },
     diamonds: {
         dryEyeReliefLine1: 'VERLICHTING\nDROGE OGEN',

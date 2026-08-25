@@ -49,6 +49,8 @@ export const useLayoutStore = defineStore('layout', () => {
     // Calculate SVG connector paths (RTL-aware)
     function calculatePaths() {
         if (!containerRef.value) return
+        // Desktop-only geometry — the mobile accordion layout has no connector lines
+        if (typeof window !== 'undefined' && window.matchMedia('(max-width: 959px)').matches) return
 
         const isRTL = i18n.global.locale.value !== 'en' &&
             document.documentElement.dir === 'rtl'

@@ -7,13 +7,19 @@ import ContentBoxWithBracket from '@/components/ContentBoxWithBracket.vue'
 import HowToUse from '@/components/HowToUse.vue'
 import SubOptionPanel from '@/components/SubOptionPanel.vue'
 import EmailModal from '@/components/EmailModal.vue'
+import MobileNavDrawer from '@/components/mobile/MobileNavDrawer.vue'
+import MobileDiamondNav from '@/components/mobile/MobileDiamondNav.vue'
+import MobileCategoryList from '@/components/mobile/MobileCategoryList.vue'
+import MobileLanguageDropdown from '@/components/mobile/MobileLanguageDropdown.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { useLayoutStore } from '@/stores/layout'
 import { useClinicalDataStore } from '@/stores/clinicalData'
+import { useIsMobile } from '@/composables/useIsMobile'
 
 const navigationStore = useNavigationStore()
 const layoutStore = useLayoutStore()
 const clinicalDataStore = useClinicalDataStore()
+const { isMobile } = useIsMobile()
 
 const { t, locale } = useI18n()
 
@@ -45,6 +51,8 @@ watch(locale, async () => {
 })
 
 const updateLayout = async () => {
+    // The desktop diamond/SVG geometry has no mobile equivalent — skip entirely
+    if (isMobile.value) return
     layoutStore.setContainerRef(containerRef.value)
     await layoutStore.updateLayout(nextTick)
 }
@@ -59,9 +67,31 @@ const allSubcategoryIds = clinicalDataStore.getAllSubcategoryIds()
 </script>
 
 <template>
-    <main class="h-screen flex flex-col mx-auto p-8 overflow-auto">
-        <!-- Main Content (Above Footer) -->
-        <div class="flex-1 flex items-start justify-center gap-8 min-w-0 relative min-h-0">
+    <main
+        :class="
+            isMobile
+                ? 'min-h-screen flex flex-col mx-auto p-4'
+                : 'h-screen flex flex-col mx-auto p-8 overflow-auto'
+        "
+    >
+        <!-- Mobile: compact header + diamond tiles + accordion drill-down -->
+        <template v-if="isMobile">
+            <div class="flex items-center justify-between mb-4">
+                <MobileNavDrawer />
+                <MobileLanguageDropdown />
+            </div>
+
+            <MobileDiamondNav />
+
+            <MobileCategoryList v-if="navigationStore.selectedDiamond" />
+
+            <div v-if="!navigationStore.selectedDiamond" class="mt-4">
+                <HowToUse />
+            </div>
+        </template>
+
+        <!-- Desktop: diamonds + SVG connectors + bracket boxes (unchanged) -->
+        <div v-else class="flex-1 flex items-start justify-center gap-8 min-w-0 relative min-h-0">
             <!-- SVG Connector Lines Overlay -->
             <svg class="absolute inset-0 w-full h-full pointer-events-none" style="z-index: 20">
                 <g

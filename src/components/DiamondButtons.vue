@@ -48,6 +48,21 @@ const ocularLabel = computed(
     () => `${t('diamonds.ocularLine1')}<br />${t('diamonds.ocularLine2')}`,
 )
 
+// Shrink-to-fit: measure the longest rendered line (accounting for any manual
+// <br /> breaks already embedded in a translation) and scale the font down
+// so long words (e.g. Hungarian "RENDELLENESSÉGEK") still fit the diamond
+const labelSizeClass = (html) => {
+    const lines = html.split(/<br\s*\/?>/gi).map((line) => line.trim().length)
+    const maxLineLength = Math.max(...lines)
+    if (maxLineLength > 14) return 'text-[10px]'
+    if (maxLineLength > 10) return 'text-[11px]'
+    return 'text-xs'
+}
+
+const tearLabelSize = computed(() => labelSizeClass(tearLabel.value))
+const eyelidLabelSize = computed(() => labelSizeClass(eyelidLabel.value))
+const ocularLabelSize = computed(() => labelSizeClass(ocularLabel.value))
+
 const handleDiamondClick = (menuId) => {
     // Map menuId to diamond type
     let diamondType = null
@@ -87,6 +102,7 @@ const handleDiamondClick = (menuId) => {
                 <DiamondButton
                     :image="tearDiamond"
                     :label="tearLabel"
+                    :label-size-class="tearLabelSize"
                     position="top"
                     menu-id="tear-film-deficiencies"
                     data-diamond="tear"
@@ -98,6 +114,7 @@ const handleDiamondClick = (menuId) => {
                 <DiamondButton
                     :image="eyelidDiamond"
                     :label="eyelidLabel"
+                    :label-size-class="eyelidLabelSize"
                     :position="eyelidPosition"
                     menu-id="eyelid-anomalies"
                     data-diamond="eyelid"
@@ -109,6 +126,7 @@ const handleDiamondClick = (menuId) => {
                 <DiamondButton
                     :image="ocularDiamond"
                     :label="ocularLabel"
+                    :label-size-class="ocularLabelSize"
                     position="bottom"
                     menu-id="ocular-surface-abnormalities"
                     data-diamond="ocular"

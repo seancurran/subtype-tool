@@ -1,5 +1,6 @@
 <script setup>
 import { computed } from 'vue'
+import { useIsMobile } from '@/composables/useIsMobile'
 import blueTopBar from '@/assets/images/blue-top-bar.png'
 import blueBottomBar from '@/assets/images/blue-bottom-bar.png'
 import greyTopBar from '@/assets/images/grey-top-bar.png'
@@ -44,12 +45,17 @@ const bottomBarImages = {
 const topBarImage = computed(() => topBarImages[props.color])
 const bottomBarImage = computed(() => bottomBarImages[props.color])
 
+const { isMobile } = useIsMobile()
+// The fixed minHeight is tuned for the narrower desktop-width box — on mobile
+// the box stretches full width, so the same text needs far less vertical space
+const effectiveMinHeight = computed(() => (isMobile.value ? 0 : props.minHeight))
+
 // Text color: white for colored tabs, dark blue for grey
 const tabTextColor = computed(() => (props.color === 'grey' ? 'text-[#05319B]' : 'text-white'))
 </script>
 
 <template>
-    <div class="grow min-w-[300px] max-w-[520px] w-full">
+    <div class="grow min-w-[300px] max-w-full min-[960px]:max-w-[520px] w-full">
         <div class="relative">
             <!-- Tab at top -->
             <div
@@ -70,7 +76,7 @@ const tabTextColor = computed(() => (props.color === 'grey' ? 'text-[#05319B]' :
             <!-- Main content box -->
             <div
                 class="border-2 border-[#ABABAB] rounded-3xl p-8 bg-white"
-                :style="{ minHeight: minHeight + 'px' }"
+                :style="{ minHeight: effectiveMinHeight + 'px' }"
                 :class="{ 'pt-[110px]': showTopTab, 'pb-[110px]': showBottomTab }"
             >
                 <slot></slot>

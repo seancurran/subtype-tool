@@ -21,6 +21,7 @@ export default {
         howToUseTabLine1: 'Instructions',
         howToUseTabLine2: "d'utilisation",
         copyright: '© {year} Alcon Inc. GLBDEOH2600001',
+        menu: 'Menu',
     },
     diamonds: {
         dryEyeReliefLine1: 'SÉCHERESSE\nOCULAIRE',
@@ -49,9 +50,9 @@ export default {
         step3: "Enfin, <strong>sélectionnez les options de prise en charge préférées de la sécheresse oculaire</strong> dans le menu contextuel. Vous pouvez envoyer un rapport vers votre adresse e\u2011mail en sélectionnant le bouton E-mail dans le menu contextuel.",
     },
     boxes: {
-        tearFilmDeficiencies: 'Anomalies du film de larmes',
-        eyelidAnomalies: 'Anomalies des paupières',
-        ocularSurfaceAbnormalities: 'Altérations de la surface oculaire',
+        tearFilmDeficiencies: 'ANOMALIES DU FILM DE LARMES',
+        eyelidAnomalies: 'ANOMALIES DES PAUPIÈRES',
+        ocularSurfaceAbnormalities: 'ALTÉRATIONS DE LA SURFACE OCULAIRE',
         lipid: 'Lipidique',
         aqueous: 'Aqueuse',
         mucinGlycocalyx: 'Mucinique glycocalyx',

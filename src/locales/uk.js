@@ -18,6 +18,7 @@ export default {
         howToUseTabLine1: 'ЯК',
         howToUseTabLine2: 'КОРИСТУВАТИСЯ',
         copyright: '© {year} Alcon Inc. GLBDEOH2600001',
+        menu: 'Меню',
     },
     diamonds: {
         dryEyeReliefLine1: 'ПОЛЕГШЕННЯ\nТА',
