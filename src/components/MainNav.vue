@@ -159,8 +159,9 @@ const handleNavClick = (menuId) => {
         </div>
 
         <!-- Copyright -->
-        <div class="text-xs text-gray-500 mt-16">
-            {{ t('nav.copyright', { year: currentYear }) }}
+        <div class="text-[10px] leading-snug text-gray-500 mt-8 w-60">
+            <p>{{ t('nav.translationCredit') }}</p>
+            <p class="mt-4">{{ t('nav.copyright', { year: currentYear }) }}</p>
         </div>
     </div>
 </template>

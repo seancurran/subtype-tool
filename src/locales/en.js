@@ -17,6 +17,8 @@ export default {
         howToUseTabLine1: 'HOW',
         howToUseTabLine2: 'TO USE',
         copyright: '© {year} Alcon Inc. GLBDEOH2600001',
+        translationCredit:
+            'Translations provided by Alcon Professional Education Teams in: France, Spain, China, Benelux, South East Asia, Czechia, Hungary, Ukraine and the Middle East.',
         menu: 'Menu',
     },
     diamonds: {
