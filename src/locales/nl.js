@@ -253,7 +253,7 @@ export default {
             },
             {
                 label: 'APPARAATGESTUURDE TRAANSTIMULATIE / -HERSTEL',
-                description: 'Interne en externe ooglidverwarming; IPL; LNLT; IPL; Warme compressen',
+                description: 'Interne en externe ooglidverwarming; IPL; Laag niveau lichttherapie (LNLT); IPL; Warme compressen',
             },
             { label: 'KNIPPERTHERAPIEËN', description: '' },
             { label: 'TOPISCHE ONTSTEKINGSREMMERS', description: 'Ciclosporine' },
@@ -272,7 +272,7 @@ export default {
             },
             {
                 label: 'APPARAATGESTUURDE TRAANSTIMULATIE / -HERSTEL',
-                description: 'Neurostimulatie; LNLT',
+                description: 'Neurostimulatie; Laag niveau lichttherapie (LNLT)',
             },
             { label: 'TOPISCHE ONTSTEKINGSREMMERS', description: '' },
             { label: 'OOGOPPERVLAK-REGENERATOREN', description: 'Biologische geneesmiddelen' },
@@ -319,7 +319,7 @@ export default {
                     },
                     {
                         label: 'APPARAATGESTUURDE TRAANSTIMULATIE / -HERSTEL',
-                        description: 'Interne en externe ooglidverwarming; IPL; LNLT; QMR',
+                        description: 'Interne en externe ooglidverwarming; IPL; Laag niveau lichttherapie (LNLT); Quantum moleculaire resonantie (QMR)',
                     },
                     {
                         label: 'OOGLIDRAND REINIGING',
@@ -359,7 +359,7 @@ export default {
             {
                 label: 'APPARAATGESTUURDE TRAANSTIMULATIE / -HERSTEL',
                 description:
-                    'LNLT; QMR; neurostimulatie; IPL; expressie warmtebehandeling van de oogleden met hulpmiddel; topische secretagogen',
+                    'Laag niveau lichttherapie (LNLT); Quantum moleculaire resonantie (QMR); neurostimulatie; IPL; expressie; Warmtebehandeling van de oogleden met hulpmiddel; topische secretagogen',
             },
             {
                 label: 'KNIPPERTHERAPIEËN',
