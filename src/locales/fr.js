@@ -256,7 +256,7 @@ export default {
             },
             {
                 label: 'DISPOSITIF DE STIMULATION / RESTAURATION LACRYMALE',
-                description: 'Dispositifs de chauffage interne et externe des paupières ; IPL ; Photobiomodulation.\nIPL\nCompresses chaudes',
+                description: 'Dispositifs de chauffage interne et externe des paupières ; IPL ; Photobiomodulation ; IPL ; Compresses chaudes',
             },
             { label: 'THÉRAPIES DU CLIGNEMENT', description: '' },
             { label: 'ANTI-INFLAMMATOIRES LOCAUX', description: 'Cyclosporine A' },
@@ -267,7 +267,7 @@ export default {
             { label: 'SUPPLÉMENTATION / STABILISATION LACRYMAL', description: 'Larmes artificielles' },
             {
                 label: 'DISPOSITIFS DE PRÉSERVATION DES LARMES',
-                description: 'Lunettes à chambre humide\nBouchons méatiques ; lentilles de contact sclérales',
+                description: 'Lunettes à chambre humide ; Bouchons méatiques ; lentilles de contact sclérales',
             },
             {
                 label: 'STIMULATION / RÉGÉNÉRATION LACRYMALE PHARMACOLOGIQUE',
@@ -275,7 +275,7 @@ export default {
             },
             {
                 label: 'DISPOSITIF DE STIMULATION / RESTAURATION LACRYMALE',
-                description: 'Neurostimulation\nLLLT',
+                description: 'Neurostimulation ; LLLT',
             },
             { label: 'ANTI-INFLAMMATOIRES LOCAUX', description: '' },
             { label: 'TRAITEMENTS RÉGÉNÉRATEURS DE LA SURFACE OCULAIRE', description: 'Biothérapies' },
@@ -311,7 +311,7 @@ export default {
                 description: '',
                 subOptions: [
                     { label: 'CONSEILS HYGIÉNO-DIÉTÉTIQUE', description: 'À considérer' },
-                    { label: 'NUTRIMENTS ORAUX', description: 'Oméga 3\nVitamine D3' },
+                    { label: 'NUTRIMENTS ORAUX', description: 'Oméga 3 ; Vitamine D3' },
                     {
                         label: 'SUPPLÉMENTATION / STABILISATION LACRYMAL',
                         description: 'Lipomimétiques',
@@ -356,11 +356,11 @@ export default {
             },
             {
                 label: 'STIMULATION / RÉGÉNÉRATION LACRYMALE PHARMACOLOGIQUE',
-                description: 'Sécrétagogues oraux\nSécrétagogues locaux\nNeuromodulation pharmacologique',
+                description: 'Sécrétagogues oraux ; Sécrétagogues locaux ; Neuromodulation pharmacologique',
             },
             {
                 label: 'DISPOSITIF DE STIMULATION / RESTAURATION LACRYMALE',
-                description: 'LLLT ; QMR ; neurostimulation\nIPL ; sondage\nDispositifs de chauffage externe des paupières ; sécrétagogues locaux',
+                description: 'LLLT ; QMR ; neurostimulation ; IPL ; sondage ; Dispositifs de chauffage externe des paupières ; sécrétagogues locaux',
             },
             {
                 label: 'THÉRAPIES DU CLIGNEMENT',
@@ -368,7 +368,7 @@ export default {
             },
             { label: 'HYGIÈNE PALPÉBRALE LOCALE', description: '' },
             { label: 'ANTI-INFLAMMATOIRES LOCAUX', description: '' },
-            { label: 'TRAITEMENTS RÉGÉNÉRATEURS DE LA SURFACE OCULAIRE', description: 'Lubricine\nBiothérapies' },
+            { label: 'TRAITEMENTS RÉGÉNÉRATEURS DE LA SURFACE OCULAIRE', description: 'Lubricine ; Biothérapies' },
             { label: 'OPTIONS CHIRURGICALES', description: 'Occlusion méatique' },
         ],
         'primary-inflammation': [

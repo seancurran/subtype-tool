@@ -253,7 +253,7 @@ export default {
             },
             {
                 label: 'ESTIMULACIÓN / RESTAURACIÓN DE LA LÁGRIMA MEDIANTE DISPOSITIVOS',
-                description: 'Calentamiento palpebral con dispositivos internos y externos; IPL; LLLT\nIPL\nCompresas calientes',
+                description: 'Calentamiento palpebral con dispositivos internos y externos; IPL; LLLT; IPL; Compresas calientes',
             },
             { label: 'TERAPIAS DE PARPADEO', description: '' },
             { label: 'ANTIINFLAMATORIOS TÓPICOS', description: 'Ciclosporina A' },
@@ -264,7 +264,7 @@ export default {
             { label: 'ESTABILIZACIÓN DE LA PELÍCULA LAGRIMAL', description: 'Lágrimas artificiales' },
             {
                 label: 'DISPOSITIVOS DE CONSERVACIÓN DE LA LÁGRIMA',
-                description: 'Gafas de cámara húmeda\nTapones lagrimales; lentes de contacto esclerales',
+                description: 'Gafas de cámara húmeda; Tapones lagrimales; lentes de contacto esclerales',
             },
             {
                 label: 'ESTIMULACIÓN / RESTAURACIÓN FARMACOLÓGICA DE LA LÁGRIMA',
@@ -272,7 +272,7 @@ export default {
             },
             {
                 label: 'ESTIMULACIÓN / RESTAURACIÓN DE LA LÁGRIMA MEDIANTE DISPOSITIVOS',
-                description: 'Neuroestimulación\nLLLT',
+                description: 'Neuroestimulación; LLLT',
             },
             { label: 'ANTIINFLAMATORIOS TÓPICOS', description: '' },
             { label: 'REGENERADORES DE LA SUPERFICIE OCULAR', description: 'Biológicos' },
@@ -308,7 +308,7 @@ export default {
                 description: '',
                 subOptions: [
                     { label: 'RECOMENDACIONES DE ESTILO DE VIDA', description: 'A tener en cuenta' },
-                    { label: 'NUTRICIÓN ORAL', description: 'Omega 3\nVitamina D3' },
+                    { label: 'NUTRICIÓN ORAL', description: 'Omega 3; Vitamina D3' },
                     {
                         label: 'ESTABILIZACIÓN DE LA PELÍCULA LAGRIMAL',
                         description: 'Lipomiméticos',
@@ -353,11 +353,11 @@ export default {
             },
             {
                 label: 'ESTIMULACIÓN / RESTAURACIÓN FARMACOLÓGICA DE LA LÁGRIMA',
-                description: 'Secretagogos orales\nSecretagogos tópicos\nNeuromodulación farmacológica',
+                description: 'Secretagogos orales; Secretagogos tópicos; Neuromodulación farmacológica',
             },
             {
                 label: 'ESTIMULACIÓN / RESTAURACIÓN DE LA LÁGRIMA MEDIANTE DISPOSITIVOS',
-                description: 'LLLT; QMR; Neuroestimulación\nIPL; sondaje\nCalentamiento palpebral mediante dispositivo externo; secretagogos tópicos',
+                description: 'LLLT; QMR; Neuroestimulación; IPL; sondaje; Calentamiento palpebral mediante dispositivo externo; secretagogos tópicos',
             },
             {
                 label: 'TERAPIAS DE PARPADEO',
@@ -365,7 +365,7 @@ export default {
             },
             { label: 'HIGIENE PALPEBRAL TÓPICA', description: '' },
             { label: 'ANTIINFLAMATORIOS TÓPICOS', description: '' },
-            { label: 'REGENERADORES DE LA SUPERFICIE OCULAR', description: 'Lubricina\nBiológicos' },
+            { label: 'REGENERADORES DE LA SUPERFICIE OCULAR', description: 'Lubricina; Biológicos' },
             { label: 'OPCIONES QUIRÚRGICAS', description: 'Oclusión puntal' },
         ],
         'primary-inflammation': [

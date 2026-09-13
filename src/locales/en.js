@@ -254,7 +254,7 @@ export default {
             },
             {
                 label: 'DEVICE TEAR STIMULATION/RESTORATION',
-                description: 'Internal and external device lid heating; IPL, LLLT\nIPL\nWarm compress',
+                description: 'Internal and external device lid heating; IPL, LLLT; IPL; Warm compress',
             },
             { label: 'BLINK THERAPIES', description: '' },
             { label: 'TOPICAL ANTI-INFLAMMATORIES', description: 'Cyclosporine A' },
@@ -265,16 +265,15 @@ export default {
             { label: 'TEAR SUPPLEMENTATION/STABILISATION', description: 'Artificial tears' },
             {
                 label: 'TEAR CONSERVATION DEVICES',
-                description: 'Moisture chamber spectacles\nPunctal plugs\nScleral contact lenses',
+                description: 'Moisture chamber spectacles; Punctal plugs; Scleral contact lenses',
             },
             {
                 label: 'PHARMACOLOGICAL TEAR STIMULATION/RESTORATION',
-                description:
-                    'Pharmacological neurostimulation\nTopical neurostimulation',
+                description: 'Pharmacological neurostimulation; Topical neurostimulation',
             },
             {
                 label: 'DEVICE TEAR STIMULATION/RESTORATION',
-                description: 'Neurostimulation\nLLLT',
+                description: 'Neurostimulation; LLLT',
             },
             { label: 'TOPICAL ANTI-INFLAMMATORIES', description: '' },
             { label: 'OCULAR SURFACE REGENERATORS', description: 'Biologics' },
@@ -310,7 +309,7 @@ export default {
                 description: '',
                 subOptions: [
                     { label: 'LIFESTYLE ADVICE', description: 'To be considered' },
-                    { label: 'ORAL NUTRITION', description: 'Omega 3\nVitamin D3' },
+                    { label: 'ORAL NUTRITION', description: 'Omega 3; Vitamin D3' },
                     {
                         label: 'TEAR SUPPLEMENTATION/STABILISATION',
                         description: 'Lipomimetics',
@@ -356,12 +355,12 @@ export default {
             {
                 label: 'PHARMACOLOGICAL TEAR STIMULATION/RESTORATION',
                 description:
-                    'Oral secretagogues\nTopical secretagogues\nPharmacological neuromodulation',
+                    'Oral secretagogues; Topical secretagogues; Pharmacological neuromodulation',
             },
             {
                 label: 'DEVICE TEAR STIMULATION/RESTORATION',
                 description:
-                    'LLLT; QMR; neurostimulation\nIPL; probing external device lid heating; topical secretagogues',
+                    'LLLT; QMR; neurostimulation; IPL; probing external device lid heating; topical secretagogues',
             },
             {
                 label: 'BLINK THERAPIES',

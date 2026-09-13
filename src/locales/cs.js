@@ -253,7 +253,7 @@ export default {
             },
             {
                 label: 'PŘÍSTROJOVÁ STIMULACE/ OBNOVA SLZNÉHO FILMU',
-                description: 'Vnitřní a vnější ohřev víčka, IPL, LLLT\nIPL\nTeplé obklady',
+                description: 'Vnitřní a vnější ohřev víčka, IPL, LLLT; IPL; Teplé obklady',
             },
             { label: 'TERAPIE MRKÁNÍ', description: '' },
             { label: 'LOKÁLNÍ ANTIFLOGISTIKA', description: 'Cyklosporin A' },
@@ -264,15 +264,15 @@ export default {
             { label: 'SUBSTITUCE/ STABILITA SLZNÉHO FILMU', description: 'Umělé slzy' },
             {
                 label: 'PROSTŘEDKY PRO ZACHOVÁNÍ SLZNÉHO FILMU',
-                description: 'Brýle s vlhkou komorou\nUzávěry slzných bodů\nSklérální kontaktní čočky',
+                description: 'Brýle s vlhkou komorou; Uzávěry slzných bodů; Sklérální kontaktní čočky',
             },
             {
                 label: 'FARMAKOLIGICKÁ STIMULACE/ OBNOVA SLZNÉHO FILMU',
-                description: 'Farmakologická neuromodelace\nLokální sekretagogy',
+                description: 'Farmakologická neuromodelace; Lokální sekretagogy',
             },
             {
                 label: 'PŘÍSTROJOVÁ STIMULACE/ OBNOVA SLZNÉHO FILMU',
-                description: 'Neurostimulace\nLLLT',
+                description: 'Neurostimulace; LLLT',
             },
             { label: 'LOKÁLNÍ ANTIFLOGISTIKA', description: '' },
             { label: 'REGENERÁTORY OČNÍHO POVRCHU', description: 'Biologika' },
@@ -308,7 +308,7 @@ export default {
                 description: '',
                 subOptions: [
                     { label: 'DOPORUČENÍ OHLEDNĚ ŽIVOTNÍHO STYLU', description: 'K zvážení' },
-                    { label: 'PEROORÁLNÍ VÝŽIVA', description: 'Omega 3\nVitamín D3' },
+                    { label: 'PEROORÁLNÍ VÝŽIVA', description: 'Omega 3; Vitamín D3' },
                     {
                         label: 'SUBSTITUCE/ STABILITA SLZNÉHO FILMU',
                         description: 'Lipomimetika',
@@ -353,12 +353,12 @@ export default {
             },
             {
                 label: 'FARMAKOLIGICKÁ STIMULACE/ OBNOVA SLZNÉHO FILMU',
-                description: 'Orální sekretagogy\nLokální sekretagogy\nFarmokologická neuromodulace',
+                description: 'Orální sekretagogy; Lokální sekretagogy; Farmokologická neuromodulace',
             },
             {
                 label: 'PŘÍSTROJOVÁ STIMULACE/ OBNOVA SLZNÉHO FILMU',
                 description:
-                    'LLLT, QMR, Neurostimulace\nIPL, sondáž zařízení pro vnější ohřev víčka, lokální sekretagogy',
+                    'LLLT, QMR, Neurostimulace; IPL, sondáž zařízení pro vnější ohřev víčka, lokální sekretagogy',
             },
             {
                 label: 'TERAPIE MRKÁNÍ',

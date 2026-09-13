@@ -253,7 +253,7 @@ export default {
             },
             {
                 label: '器械辅助促泪 / 泪液修复',
-                description: '睑缘内外加热理疗\nIPL:LLLT\nIPL\n热敷',
+                description: '睑缘内外加热理疗、IPL:LLLT、IPL、热敷',
             },
             { label: '眨眼训练 /治疗', description: '' },
             { label: '局部抗炎药', description: '环孢素 A' },
@@ -264,7 +264,7 @@ export default {
             { label: '补充泪液 / 稳定泪膜', description: '人工泪液' },
             {
                 label: '泪液潴留装置',
-                description: '湿房镜\n泪点栓，巩膜镜',
+                description: '湿房镜、泪点栓，巩膜镜',
             },
             {
                 label: '药物促泪修复治疗',
@@ -272,7 +272,7 @@ export default {
             },
             {
                 label: '器械辅助促泪 / 泪液修复',
-                description: '神经刺激治疗\nLLLT',
+                description: '神经刺激治疗、LLLT',
             },
             { label: '局部抗炎药', description: '' },
             { label: '眼表修复剂', description: '生物制剂' },
@@ -308,7 +308,7 @@ export default {
                 description: '',
                 subOptions: [
                     { label: '生活方式建议', description: '需酌情评估' },
-                    { label: '口服营养补充', description: 'Ω‑3 脂肪酸\n维生素D3' },
+                    { label: '口服营养补充', description: 'Ω‑3 脂肪酸、维生素D3' },
                     {
                         label: '补充泪液 / 稳定泪膜',
                         description: '脂质替代剂',
@@ -319,7 +319,7 @@ export default {
                     },
                     {
                         label: '器械辅助促泪 / 泪液修复',
-                        description: '睑缘内外加热理疗\nIPL:LLLT:QMR',
+                        description: '睑缘内外加热理疗、IPL:LLLT:QMR',
                     },
                     {
                         label: '睑缘清创术',
@@ -353,19 +353,19 @@ export default {
             },
             {
                 label: '药物促泪修复治疗',
-                description: '口服促泪药\n促泪眼药水\n药物神经调节治疗',
+                description: '口服促泪药、促泪眼药水、药物神经调节治疗',
             },
             {
                 label: '器械辅助促泪 / 泪液修复',
-                description: 'LLLT:QMR:神经刺激治疗\nIPL:探通\n睑缘内外加热理疗\n局部促泌剂',
+                description: 'LLLT:QMR:神经刺激治疗、IPL:探通、睑缘内外加热理疗、局部促泌剂',
             },
             {
                 label: '眨眼训练 /治疗',
-                description: '睑缘内外加热理疗\n局部促泌剂',
+                description: '睑缘内外加热理疗、局部促泌剂',
             },
             { label: '局部眼睑清洁', description: '' },
             { label: '局部抗炎药', description: '' },
-            { label: '眼表修复剂', description: '润滑素\n生物制剂' },
+            { label: '眼表修复剂', description: '润滑素、生物制剂' },
             { label: '手术治疗方案', description: '泪点栓塞' },
         ],
         'primary-inflammation': [

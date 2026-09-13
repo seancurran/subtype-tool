@@ -33,7 +33,7 @@ export default {
     panel: {
         standardTesting: 'STANDAARD ONDERZOEK',
         advancedTesting: 'GEAVANCEERD ONDERZOEK',
-        management: 'BEHANDELING VAN DROGE-OOGZIEKTE',
+        management: 'BEHANDELING VAN DROGE OGEN',
         previous: 'VORIGE',
         next: 'VOLGENDE',
         email: 'E-MAIL',
@@ -75,7 +75,7 @@ export default {
         close: 'Sluiten',
         send: 'E-mail verzenden',
         sending: 'Verzenden...',
-        fromName: 'Hulpmiddel voor subtypering van droge-oogziekte',
+        fromName: 'Hulpmiddel voor subtypering van droge ogen',
         subject: 'Uw resultaten van de Dry Eye Management Map',
         pxReferencePrefix: 'Patiëntreferentie: {ref}',
         header: {
@@ -88,7 +88,7 @@ export default {
         lipid: { category: 'TRAANFILM DEFICIENTIES', title: 'LIPIDE' },
         aqueous: { category: 'TRAANFILM DEFICIENTIES', title: 'WATER' },
         'mucin-glycocalyx': { category: 'TRAANFILM DEFICIENTIES', title: 'MUCINE / GLYCOCALYX' },
-        'blink-lid-closure': { category: 'OOGLIDAFWIJKINGEN', title: 'KNIPPERSLAG/OOGLIDSLUITING' },
+        'blink-lid-closure': { category: 'OOGLIDAFWIJKINGEN', title: 'KNIPPERSLAG/\nOOGLIDSLUITING' },
         'lid-margin': { category: 'OOGLIDAFWIJKINGEN', title: 'OOGLIDRAND' },
         'anatomical-misalignment': {
             category: 'AANDOENINGEN VAN HET OOGOPPERVLAK',
@@ -100,7 +100,7 @@ export default {
         },
         'ocular-surface-cellular': {
             category: 'AANDOENINGEN VAN HET OOGOPPERVLAK',
-            title: 'CELSCHADE/VERSTORING',
+            title: 'CELSCHADE/\nVERSTORING',
         },
         'primary-inflammation': {
             category: 'AANDOENINGEN VAN HET OOGOPPERVLAK',
@@ -253,7 +253,7 @@ export default {
             },
             {
                 label: 'APPARAATGESTUURDE TRAANSTIMULATIE / -HERSTEL',
-                description: 'Interne en externe ooglidverwarming; IPL; LNLT\nIPL\nWarme compressen',
+                description: 'Interne en externe ooglidverwarming; IPL; LNLT; IPL; Warme compressen',
             },
             { label: 'KNIPPERTHERAPIEËN', description: '' },
             { label: 'TOPISCHE ONTSTEKINGSREMMERS', description: 'Ciclosporine' },
@@ -264,15 +264,15 @@ export default {
             { label: 'TRAANSUPPLETIE / STABILISATIE', description: 'Kunsttranen' },
             {
                 label: 'TRAANBEHOUDENDE HULPMIDDELEN',
-                description: 'Kappenbrillen\nPunctum plugs\nSclerale lenzen',
+                description: 'Kappenbrillen; Punctum plugs; Sclerale lenzen',
             },
             {
                 label: 'FARMACOLOGISCHE TRAANSTIMULATIE / -HERSTEL',
-                description: 'Farmacologische neuromodulatie\nTopische secretagogen',
+                description: 'Farmacologische neuromodulatie; Topische secretagogen',
             },
             {
                 label: 'APPARAATGESTUURDE TRAANSTIMULATIE / -HERSTEL',
-                description: 'Neurostimulatie\nLNLT',
+                description: 'Neurostimulatie; LNLT',
             },
             { label: 'TOPISCHE ONTSTEKINGSREMMERS', description: '' },
             { label: 'OOGOPPERVLAK-REGENERATOREN', description: 'Biologische geneesmiddelen' },
@@ -308,7 +308,7 @@ export default {
                 description: '',
                 subOptions: [
                     { label: 'LEEFSTIJLADVIES', description: 'Te overwegen' },
-                    { label: 'VOEDING', description: 'Omega 3\nVitamine D3' },
+                    { label: 'VOEDING', description: 'Omega 3; Vitamine D3' },
                     {
                         label: 'TRAANSUPPLETIE / STABILISATIE',
                         description: 'Lipomimetische stoffen',
@@ -354,12 +354,12 @@ export default {
             {
                 label: 'FARMACOLOGISCHE TRAANSTIMULATIE / -HERSTEL',
                 description:
-                    'Orale secretagogen\nTopische secretagogen\nFarmacologische neuromodulatie',
+                    'Orale secretagogen; Topische secretagogen; Farmacologische neuromodulatie',
             },
             {
                 label: 'APPARAATGESTUURDE TRAANSTIMULATIE / -HERSTEL',
                 description:
-                    'LNLT; QMR; neurostimulatie\nIPL; expressie warmtebehandeling van de oogleden met hulpmiddel; topische secretagogen',
+                    'LNLT; QMR; neurostimulatie; IPL; expressie warmtebehandeling van de oogleden met hulpmiddel; topische secretagogen',
             },
             {
                 label: 'KNIPPERTHERAPIEËN',
@@ -367,7 +367,7 @@ export default {
             },
             { label: 'TOPISCHE OOGLIDHYGIËNE', description: '' },
             { label: 'TOPISCHE ONTSTEKINGSREMMERS', description: '' },
-            { label: 'OOGOPPERVLAK-REGENERATOREN', description: 'Lubricine\nBiologische geneesmiddelen' },
+            { label: 'OOGOPPERVLAK-REGENERATOREN', description: 'Lubricine; Biologische geneesmiddelen' },
             { label: 'OPERATIEVE OPTIES', description: 'Punctumocclusie' },
         ],
         'primary-inflammation': [

@@ -253,7 +253,7 @@ export default {
             },
             {
                 label: 'RANGSANGAN / PEMULIHAN AIR MATA MENGGUNAKAN PERANTI',
-                description: 'Pemanasan kelopak mata menggunakan peranti dalaman dan luaran; IPL; LLLT\nIPL\nKompres hangat',
+                description: 'Pemanasan kelopak mata menggunakan peranti dalaman dan luaran; IPL; LLLT; IPL; Kompres hangat',
             },
             { label: 'TERAPI KEDIPAN', description: '' },
             { label: 'ANTIRADANG TOPIKAL', description: 'Siklosporin A' },
@@ -264,7 +264,7 @@ export default {
             { label: 'PENGGANTIAN / PENSTABILAN AIR MATA', description: 'Air mata tiruan' },
             {
                 label: 'PERANTI PEMELIHARAAN AIR MATA',
-                description: 'Cermin mata ruang kelembapan\nPalam punktum\nKanta sentuh skleral',
+                description: 'Cermin mata ruang kelembapan; Palam punktum; Kanta sentuh skleral',
             },
             {
                 label: 'RANGSANGAN / PEMULIHAN AIR MATA SECARA FARMAKOLOGI',
@@ -272,7 +272,7 @@ export default {
             },
             {
                 label: 'RANGSANGAN / PEMULIHAN AIR MATA MENGGUNAKAN PERANTI',
-                description: 'Neurostimulasi\nLLLT',
+                description: 'Neurostimulasi; LLLT',
             },
             { label: 'ANTIRADANG TOPIKAL', description: '' },
             { label: 'REGENERATOR PERMUKAAN OKULAR', description: 'Biologik' },
@@ -308,7 +308,7 @@ export default {
                 description: '',
                 subOptions: [
                     { label: 'NASIHAT GAYA HIDUP', description: 'Untuk dipertimbangkan' },
-                    { label: 'PEMAKANAN ORAL', description: 'Omega-3\nVitamin D3' },
+                    { label: 'PEMAKANAN ORAL', description: 'Omega-3; Vitamin D3' },
                     {
                         label: 'PENGGANTIAN / PENSTABILAN AIR MATA',
                         description: 'Lipomimetik',
@@ -353,12 +353,12 @@ export default {
             },
             {
                 label: 'RANGSANGAN / PEMULIHAN AIR MATA SECARA FARMAKOLOGI',
-                description: 'Sekretagog oral\nSekretagog topikal\nNeuromodulasi farmakologi',
+                description: 'Sekretagog oral; Sekretagog topikal; Neuromodulasi farmakologi',
             },
             {
                 label: 'RANGSANGAN / PEMULIHAN AIR MATA MENGGUNAKAN PERANTI',
                 description:
-                    'LLLT; QMR; neurostimulasi\nIPL; probing\nPemanasan kelopak mata menggunakan peranti luaran; sekretagog topikal',
+                    'LLLT; QMR; neurostimulasi; IPL; probing; Pemanasan kelopak mata menggunakan peranti luaran; sekretagog topikal',
             },
             {
                 label: 'TERAPI KEDIPAN',
@@ -366,7 +366,7 @@ export default {
             },
             { label: 'KEBERSIHAN KELOPAK MATA TOPIKAL', description: '' },
             { label: 'ANTIRADANG TOPIKAL', description: '' },
-            { label: 'REGENERATOR PERMUKAAN OKULAR', description: 'Lubrisin\nBiologik' },
+            { label: 'REGENERATOR PERMUKAAN OKULAR', description: 'Lubrisin; Biologik' },
             { label: 'PILIHAN PEMBEDAHAN', description: 'Oklusi punktum' },
         ],
         'primary-inflammation': [

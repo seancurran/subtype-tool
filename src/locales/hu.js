@@ -253,7 +253,7 @@ export default {
             },
             {
                 label: 'KÖNNYTERMELÉS SERKENTÉSE/HELYREÁLLÍTÁSA ESZKÖZÖKKEL',
-                description: 'Belső és külső szemhéjmelegítés; IPL; LLLT\nIPL\nMeleg borogatás',
+                description: 'Belső és külső szemhéjmelegítés; IPL; LLLT; IPL; Meleg borogatás',
             },
             { label: 'PISLOGÁSI GYAKORLATOK', description: '' },
             { label: 'LOKÁLIS GYULLADÁSCSÖKKENTŐK', description: 'Ciklosporin A' },
@@ -264,15 +264,15 @@ export default {
             { label: 'KÖNNYPÓTLÁS/STABILIZÁLÁS', description: 'Műkönnyek' },
             {
                 label: 'KÖNNYMEGTARTÓ ESZKÖZÖK',
-                description: 'Nedvességmegőrző szemüveg\nKönnypont-dugó, sclerális kontaktlencse',
+                description: 'Nedvességmegőrző szemüveg; Könnypont-dugó, sclerális kontaktlencse',
             },
             {
                 label: 'KÖNNYTERMELÉS GYÓGYSZERES SERKENTÉSE/HELYREÁLLÍTÁSA',
-                description: 'Szelén-szulfid\nGyógyszeres neuromoduláció és lokális szekretagóg szerek',
+                description: 'Szelén-szulfid; Gyógyszeres neuromoduláció és lokális szekretagóg szerek',
             },
             {
                 label: 'KÖNNYTERMELÉS SERKENTÉSE/HELYREÁLLÍTÁSA ESZKÖZÖKKEL',
-                description: 'Neurostimuláció\nLLLT',
+                description: 'Neurostimuláció; LLLT',
             },
             { label: 'LOKÁLIS GYULLADÁSCSÖKKENTŐK', description: '' },
             { label: 'SZEMFELSZÍN-REGENERÁLÓ TERÁPIÁK', description: 'Biológiai készítmények' },
@@ -308,7 +308,7 @@ export default {
                 description: '',
                 subOptions: [
                     { label: 'ÉLETMÓDBELI TANÁCSOK', description: 'Mérlegelendő' },
-                    { label: 'ORÁLIS TÁPLÁLÉKKIEGÉSZÍTŐK', description: 'Omega 3\nD3 vitamin' },
+                    { label: 'ORÁLIS TÁPLÁLÉKKIEGÉSZÍTŐK', description: 'Omega 3; D3 vitamin' },
                     {
                         label: 'KÖNNYPÓTLÁS/STABILIZÁLÁS',
                         description: 'Lipomimetikus készítmények',
@@ -354,12 +354,12 @@ export default {
             {
                 label: 'KÖNNYTERMELÉS GYÓGYSZERES SERKENTÉSE/HELYREÁLLÍTÁSA',
                 description:
-                    'Orális szekretagóg szerek\nLokális szekretagóg szerek\nGyógyszeres neuromoduláció',
+                    'Orális szekretagóg szerek; Lokális szekretagóg szerek; Gyógyszeres neuromoduláció',
             },
             {
                 label: 'KÖNNYTERMELÉS SERKENTÉSE/HELYREÁLLÍTÁSA ESZKÖZÖKKEL',
                 description:
-                    'LLLT; QMR; neurostimuláció\nIPL; szondázás belső és külső szemhéjmelegítés; lokális szekretagóg szerek',
+                    'LLLT; QMR; neurostimuláció; IPL; szondázás belső és külső szemhéjmelegítés; lokális szekretagóg szerek',
             },
             {
                 label: 'PISLOGÁSI GYAKORLATOK',
