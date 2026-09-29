@@ -1,4 +1,4 @@
-// Czech translations — sourced from "Dry Eye Management Map Translation (Czech) 202605.xlsx"
+// Czech translations — sourced from "Dry Eye Management Map Translation (Czech) 202609.xlsx"
 export default {
     nav: {
         tearFilmDeficiencies: 'DEFICIT SLZNÉHO FILMU',
@@ -6,14 +6,14 @@ export default {
         aqueous: 'Vodná složka',
         mucinGlycocalyx: 'Mucin/glykokalyx',
         eyelidAnomalies: 'ANOMÁLIE OČNÍCH VÍČEK',
-        blinkLidClosure: 'Mrkání/ dovření víček',
+        blinkLidClosure: 'Mrkání/dovření víček',
         lidMargin: 'Okraj víčka',
         ocularSurfaceAbnormalities: 'ABNORMALITY OČNÍHO POVRCHU',
         anatomicalMisalignment: 'Anatomická malalignace (chybé postavení)',
         neuralDysfunction: 'Neurální dysfunkce',
-        ocularSurfaceCellularLine1: 'Buněčné poškození /',
+        ocularSurfaceCellularLine1: 'Buněčné poškození/',
         ocularSurfaceCellularLine2: 'narušení povrchu oka',
-        primaryInflammationLine1: 'Primární zánět /',
+        primaryInflammationLine1: 'Primární zánět/',
         primaryInflammationLine2: 'ocidativní stres',
         howToUseTabLine1: 'NÁVOD K',
         howToUseTabLine2: 'POUŽITÍ',
@@ -42,8 +42,8 @@ export default {
         welcome: 'Vítejte.',
         intro: 'Mapa managementu suchého oka generuje příslušné léčebné postupy na základě zmírňování projevů a měření.',
         howToUseTitle: 'JAK MAPU MANAGEMENTU SUCHÉHO OKA POUŽÍVAT',
-        step1: 'Nejprve <strong>vyberte kategorii vlevo</strong> - Deficity slzného filmu, Anomálie očních víček nebo Abnormality očního povrchu.',
-        step2: 'Poté v rámci hlavní vybrané kategorie <strong>zvolte podkategorii</strong> pro blížší klasifikaci typu suchého oka. Můžete vybrat více podkategorií najednou a k přepínání mezi zvolenými možnostmi použít tlačítka Další/Předchozí.',
+        step1: 'Nejprve <strong>vyberte kategorii vlevo</strong> - deficity slzného filmu, anomálie očních víček nebo abnormality očního povrchu.',
+        step2: 'Poté v rámci hlavní vybrané kategorie <strong>zvolte podkategorii</strong> pro blížší klasifikaci typu suchého oka. Můžete vybrat více podkategorií najednou a k přepínání mezi zvolenými možnostmi použít tlačítka další/předchozí.',
         step3: 'Nakonec z vyskakovacího menu <strong>zvolte preferované možnosti léčby a zvládání onemocnění suchého oka</strong>. Výslednou zprávu si můžete odeslat na e-mail kliknutím na tlačítko E-mail ve vyskakovací nabídce.',
     },
     boxes: {
@@ -53,11 +53,11 @@ export default {
         lipid: 'Lipidová složka',
         aqueous: 'Vodná složka',
         mucinGlycocalyx: 'Mucin/glykokalyx',
-        blinkLidClosure: 'Mrkání/ dovření víček',
+        blinkLidClosure: 'Mrkání/dovření víček',
         lidMargin: 'Okraj víčka',
         anatomicalMisalignment: 'Anatomická malalignace (chybé postavení)',
         neuralDysfunction: 'Neurální dysfunkce',
-        ocularSurfaceCellular: 'Buněčné poškození/ narušení povrchu oka',
+        ocularSurfaceCellular: 'Buněčné poškození/narušení povrchu oka',
         primaryInflammation: 'Primární zánět/ocidativní stres',
     },
     email: {
@@ -88,7 +88,7 @@ export default {
         lipid: { category: 'NEDOSTATEK SLZNÉHO FILMU', title: 'LIPIDOVÁ SLOŽKA' },
         aqueous: { category: 'NEDOSTATEK SLZNÉHO FILMU', title: 'VODNÁ SLOŽKA' },
         'mucin-glycocalyx': { category: 'NEDOSTATEK SLZNÉHO FILMU', title: 'MUCIN/GLYKOKALYX' },
-        'blink-lid-closure': { category: 'ANOMÁLIE VÍČEK', title: 'MRKÁNÍ/ DOVŘENÍ VÍČEK' },
+        'blink-lid-closure': { category: 'ANOMÁLIE VÍČEK', title: 'MRKÁNÍ/DOVŘENÍ VÍČEK' },
         'lid-margin': { category: 'ANOMÁLIE VÍČEK', title: 'OKRAJ VÍČKA' },
         'anatomical-misalignment': {
             category: 'ABNORMALITY OČNÍHO POVRCHU',
